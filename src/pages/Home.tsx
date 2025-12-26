@@ -5,6 +5,9 @@ import RecentProjects from "../components/RecentProjects";
 import TargetAudience from "../components/TargetAudience";
 import TrustSignals from "../components/TrustSignals";
 import MiniCloser from "../components/MiniCloser";
+import HumanFactor from "../components/HumanFactor";
+import Testimonials from "../components/Testimonials";
+import LeadMagnet from "../components/LeadMagnet";
 import SEO from "../components/SEO";
 import { motion } from 'framer-motion';
 
@@ -76,6 +79,8 @@ export default function Home() {
                         <OurApproach />
                     </div>
 
+                    <HumanFactor />
+
                     {/* Zona de Foco: Background Premium Oscuro/Gradiente */}
                     <div id="services" className="bg-slate-900 py-12 relative overflow-hidden">
                         {/* Decorative background for the focus zone */}
@@ -85,9 +90,13 @@ export default function Home() {
                         <FeaturedServices />
                     </div>
 
+                    <Testimonials />
+
                     <div id="projects">
                         <RecentProjects />
                     </div>
+
+                    <LeadMagnet />
 
                     <MiniCloser />
 
