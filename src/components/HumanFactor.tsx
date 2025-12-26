@@ -1,6 +1,18 @@
 import { motion } from 'framer-motion';
+import Lottie from 'lottie-react';
+import { useEffect, useState } from 'react';
 
 export default function HumanFactor() {
+    const [animationData, setAnimationData] = useState<any>(null);
+
+    useEffect(() => {
+        // High-end Web Development/Construction animation
+        fetch('https://lottie.host/82df0e80-d996-48c0-84cf-ee0908866383/6pWn3Y9EIn.json')
+            .then(res => res.json())
+            .then(data => setAnimationData(data))
+            .catch(err => console.error("Error loading Lottie:", err));
+    }, []);
+
     return (
         <section className="py-24 px-6 bg-slate-50/30 overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
@@ -39,29 +51,25 @@ export default function HumanFactor() {
                         viewport={{ once: true }}
                         className="relative z-10 p-4 border border-slate-100 shadow-2xl rounded-[2.5rem] bg-white transform md:rotate-2 group overflow-hidden"
                     >
-                        <div className="aspect-[4/3] bg-slate-900 rounded-[2rem] flex items-center justify-center overflow-hidden relative border border-slate-800">
-                            {/* Video Background (Direct access to Architect at work) */}
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-60"
-                            >
-                                <source src="/assets/kairo_dev_video.mp4" type="video/mp4" />
-                                {/* Fallback if video is not yet present */}
-                                <img
-                                    src="/assets/kairo_dev_environment_visual.png"
-                                    alt="Kairo Development"
-                                    className="w-full h-full object-cover"
+                        <div className="aspect-[4/3] bg-slate-900 rounded-[2rem] flex items-center justify-center overflow-hidden relative border border-slate-800 p-8">
+                            {animationData ? (
+                                <Lottie
+                                    animationData={animationData}
+                                    loop={true}
+                                    className="w-full h-full opacity-90"
                                 />
-                            </video>
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+                            ) : (
+                                <div className="flex flex-col items-center gap-4">
+                                    <div className="w-12 h-12 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+                                    <span className="text-xs font-mono text-blue-400 animate-pulse uppercase tracking-widest">Compiling Assets...</span>
+                                </div>
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none" />
 
                             {/* Overlay tag */}
-                            <div className="absolute top-4 left-4 bg-blue-500/10 backdrop-blur-md border border-blue-500/20 px-3 py-1 rounded-full flex items-center gap-2">
+                            <div className="absolute top-4 left-4 bg-blue-500/10 backdrop-blur-md border border-blue-500/20 px-3 py-1 rounded-full flex items-center gap-2 pointer-events-none">
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                                <span className="text-[8px] font-mono text-blue-400 uppercase tracking-widest">Compiling: src/kairo.engineering</span>
+                                <span className="text-[8px] font-mono text-blue-400 uppercase tracking-widest">Status: Ready</span>
                             </div>
                         </div>
                     </motion.div>
