@@ -23,10 +23,10 @@ export default function TrustSignals() {
             <div className="max-w-7xl mx-auto px-6">
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
-                    <Metric value="+15" label="Proyectos" sublabel="Exitosos en LATAM" />
-                    <Metric value="+40%" label="ROI Promedio" sublabel="En el primer año" />
-                    <Metric value="24/7" label="Soporte" sublabel="Garantía de uptime" />
-                    <Metric value="100%" label="Confidencial" sublabel="Seguridad Enterprise" />
+                    <Metric value="+20" label="Sistemas Liderados" sublabel="En industrias críticas" />
+                    <Metric value="High" label="Disponibilidad" sublabel="Sistemas de alta escala" />
+                    <Metric value="Cloud" label="Native" sublabel="Arquitectura moderna" />
+                    <Metric value="Elite" label="Standards" sublabel="Garantía de calidad" />
                 </div>
 
                 {/* Logo Cloud (Visual only for now) */}

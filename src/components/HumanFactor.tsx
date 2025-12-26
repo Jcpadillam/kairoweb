@@ -14,18 +14,20 @@ export default function HumanFactor() {
                             Factor Humano
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
-                            Tecnología de élite, <br /> impulsada por <span className="text-[#2F80ED]">personas</span>.
+                            Ingeniería de Autor para <br /> negocios en <span className="text-[#2F80ED]">escalada</span>.
                         </h2>
                         <p className="text-slate-600 text-lg mb-8 leading-relaxed max-w-xl">
-                            En Kairo, creemos que la IA y el código son solo herramientas. La verdadera magia ocurre cuando combinamos esa potencia con una transparencia total y un compromiso humano inquebrantable con tu éxito.
+                            Kairo nace con una misión clara: cerrar la brecha entre la ambición de negocio y la ejecución técnica de élite. Fundada bajo una filosofía de ingeniería rigurosa, nuestra estructura está diseñada para crecer junto a tu proyecto, asegurando que cada línea de código sea un activo estratégico.
                         </p>
                         <div className="flex items-center gap-4 border-t border-slate-100 pt-8">
-                            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-[#2F80ED]">
-                                K
+                            <div className="w-12 h-12 rounded-full bg-[#2F80ED]/10 flex items-center justify-center border border-[#2F80ED]/20">
+                                <svg className="w-6 h-6 text-[#2F80ED]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg>
                             </div>
                             <div>
-                                <p className="text-sm font-bold text-slate-900">Equipo KairoWeb</p>
-                                <p className="text-xs text-slate-400 font-medium">Comprometidos con tu visión</p>
+                                <p className="text-sm font-bold text-slate-900 tracking-tight">Arquitectura de Élite</p>
+                                <p className="text-xs text-slate-400 font-medium">Liderando la visión técnica de Kairo</p>
                             </div>
                         </div>
                     </motion.div>
@@ -35,18 +37,15 @@ export default function HumanFactor() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="relative z-10 p-4 border border-slate-100 shadow-2xl rounded-[2.5rem] bg-white transform md:rotate-2"
+                        className="relative z-10 p-4 border border-slate-100 shadow-2xl rounded-[2.5rem] bg-white transform md:rotate-2 group overflow-hidden"
                     >
-                        <div className="aspect-[4/3] bg-slate-50 rounded-[2rem] flex items-center justify-center p-8 overflow-hidden">
-                            {/* Visual Placeholder for Team photo or generic office context */}
-                            <div className="space-y-4 w-full">
-                                <div className="h-4 bg-slate-200 rounded-full w-3/4 animate-pulse" />
-                                <div className="h-4 bg-slate-200 rounded-full w-full animate-pulse" />
-                                <div className="h-4 bg-slate-200 rounded-full w-5/6 animate-pulse" />
-                                <div className="h-32 bg-blue-50 rounded-2xl w-full flex items-center justify-center text-blue-300 font-bold italic">
-                                    [ Imagen: Equipo Kairo ]
-                                </div>
-                            </div>
+                        <div className="aspect-[4/3] bg-slate-50 rounded-[2rem] flex items-center justify-center overflow-hidden relative">
+                            <img
+                                src="/assets/kairo_tech_architecture_blueprint.png"
+                                alt="Kairo Technical Architecture"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
                         </div>
                     </motion.div>
                     {/* Decorative elements */}
