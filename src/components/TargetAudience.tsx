@@ -97,7 +97,7 @@ export default function TargetAudience() {
   ];
 
   return (
-    <section id='para-quien' className='bg-white py-24 px-6 relative overflow-hidden'>
+    <section id='para-quien' className='bg-transparent py-24 px-6 relative overflow-hidden'>
       {/* Background Decor (Soft Nexus Orbs) */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-50/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />

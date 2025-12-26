@@ -117,7 +117,7 @@ export default function FeaturedServices() {
   ];
 
   return (
-    <section id='soluciones' className='bg-white py-24 px-6 relative overflow-hidden'>
+    <section id='soluciones' className='bg-transparent py-24 px-6 relative overflow-hidden'>
       {/* Background Decor */}
       <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-50/20 rounded-full blur-[120px] translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
@@ -135,7 +135,7 @@ export default function FeaturedServices() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className='text-3xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1] mb-6'
+            className='text-3xl md:text-6xl font-black text-white tracking-tight leading-[1] mb-6'
           >
             Propulsamos tu negocio <br className="hidden md:block" /> con <span className='text-[#2F80ED]'>Ingeniería de IA</span>.
           </motion.h2>
@@ -144,7 +144,7 @@ export default function FeaturedServices() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className='mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed'
+            className='mt-4 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed'
           >
             No solo construimos software; creamos activos estratégicos que utilizan IA para automatizar el crecimiento y maximizar la rentabilidad de tu empresa.
           </motion.p>

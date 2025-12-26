@@ -1,5 +1,4 @@
 import FeaturedServices from "../components/FeaturedServices";
-import FinalCTA from "../components/FinalCTA";
 import KairoHero from "../components/KairoHero";
 import OurApproach from "../components/OurApproach";
 import RecentProjects from "../components/RecentProjects";
@@ -64,21 +63,30 @@ export default function Home() {
                 {/* Contenido principal */}
                 <div className="w-full">
                     <KairoHero />
-                    <div id="audience">
+
+                    {/* Zona de Descanso: Background Gris Suave */}
+                    <div id="audience" className="bg-slate-50/50">
                         <TargetAudience />
                     </div>
+
                     <div id="approach">
                         <OurApproach />
                     </div>
-                    <div id="services">
+
+                    {/* Zona de Foco: Background Premium Oscuro/Gradiente */}
+                    <div id="services" className="bg-slate-900 py-12 relative overflow-hidden">
+                        {/* Decorative background for the focus zone */}
+                        <div className="absolute inset-0 opacity-30">
+                            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(47,128,237,0.1),transparent_70%)]" />
+                        </div>
                         <FeaturedServices />
                     </div>
+
                     <div id="projects">
                         <RecentProjects />
                     </div>
-                    <div id="contact">
-                        <FinalCTA />
-                    </div>
+
+                    {/* Contact section removed as requested */}
                 </div>
             </section>
         </div>
