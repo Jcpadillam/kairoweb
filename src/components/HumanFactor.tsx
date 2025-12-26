@@ -39,13 +39,30 @@ export default function HumanFactor() {
                         viewport={{ once: true }}
                         className="relative z-10 p-4 border border-slate-100 shadow-2xl rounded-[2.5rem] bg-white transform md:rotate-2 group overflow-hidden"
                     >
-                        <div className="aspect-[4/3] bg-slate-50 rounded-[2rem] flex items-center justify-center overflow-hidden relative">
-                            <img
-                                src="/assets/kairo_tech_architecture_blueprint.png"
-                                alt="Kairo Technical Architecture"
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
+                        <div className="aspect-[4/3] bg-slate-900 rounded-[2rem] flex items-center justify-center overflow-hidden relative border border-slate-800">
+                            {/* Video Background (Direct access to Architect at work) */}
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-60"
+                            >
+                                <source src="/assets/kairo_dev_video.mp4" type="video/mp4" />
+                                {/* Fallback if video is not yet present */}
+                                <img
+                                    src="/assets/kairo_dev_environment_visual.png"
+                                    alt="Kairo Development"
+                                    className="w-full h-full object-cover"
+                                />
+                            </video>
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+
+                            {/* Overlay tag */}
+                            <div className="absolute top-4 left-4 bg-blue-500/10 backdrop-blur-md border border-blue-500/20 px-3 py-1 rounded-full flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                                <span className="text-[8px] font-mono text-blue-400 uppercase tracking-widest">Compiling: src/kairo.engineering</span>
+                            </div>
                         </div>
                     </motion.div>
                     {/* Decorative elements */}
