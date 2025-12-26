@@ -3,6 +3,8 @@ import KairoHero from "../components/KairoHero";
 import OurApproach from "../components/OurApproach";
 import RecentProjects from "../components/RecentProjects";
 import TargetAudience from "../components/TargetAudience";
+import TrustSignals from "../components/TrustSignals";
+import MiniCloser from "../components/MiniCloser";
 import SEO from "../components/SEO";
 import { motion } from 'framer-motion';
 
@@ -67,6 +69,7 @@ export default function Home() {
                     {/* Zona de Descanso: Background Gris Suave */}
                     <div id="audience" className="bg-slate-50/50">
                         <TargetAudience />
+                        <TrustSignals />
                     </div>
 
                     <div id="approach">
@@ -85,6 +88,8 @@ export default function Home() {
                     <div id="projects">
                         <RecentProjects />
                     </div>
+
+                    <MiniCloser />
 
                     {/* Contact section removed as requested */}
                 </div>
