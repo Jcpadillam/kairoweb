@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KairoWeb Home\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "Dominamos el código. Escalamos tu negocio."
+msgstr "We master the code. We scale your business."
+
+msgid "Desarrollamos ecosistemas digitales digitales de alto rendimiento. eCommerce, integraciones y soporte experto diseñado para escalar sin fricciones."
+msgstr "We develop high-performance digital ecosystems. eCommerce, integrations, and expert support designed for seamless scaling."
+
+msgid "E-commerce de Alto Impacto"
+msgstr "High-Impact E-commerce"
+
+msgid "Optimizamos tu tienda en Shopify con motores de personalización y búsqueda inteligente que aumentan radicalmente el ticket promedio."
+msgstr "We optimize your Shopify store with personalization engines and smart search that radically increase the average ticket."
+
+msgid "+35% Tasa de Conversión"
+msgstr "+35% Conversion Rate"
+
+msgid "Ecosistemas CMS con IA"
+msgstr "CMS Ecosystems with AI"
+
+msgid "Potenciamos Strapi y WordPress con flujos de generación de contenido y SEO automatizado, transformando tu blog en una máquina de tráfico."
+msgstr "We power Strapi and WordPress with content generation workflows and automated SEO, turning your blog into a traffic machine."
+
+msgid "SEO Automatizado"
+msgstr "Automated SEO"
+
+msgid "Desarrollo Web a la Medida"
+msgstr "Custom Web Development"
+
+msgid "Construimos aplicaciones web de alto rendimiento con lógica de negocio potenciada por IA para resolver desafíos complejos y específicos."
+msgstr "We build high-performance web applications with AI-powered business logic to solve complex and specific challenges."
+
+msgid "Arquitectura Escalable"
+msgstr "Scalable Architecture"
+
+msgid "Estrategia de Datos e IA"
+msgstr "Data and AI Strategy"
+
+msgid "No implementamos IA por moda; analizamos tus datos para integrar soluciones que optimizan procesos y maximizan la rentabilidad real."
+msgstr "We don't implement AI for hype; we analyze your data to integrate solutions that optimize processes and maximize real profitability."
+
+msgid "ROI Garantizado"
+msgstr "Guaranteed ROI"
+
+msgid "Propulsamos tu negocio con Ingeniería de IA."
+msgstr "We propel your business with AI Engineering."
+
+msgid "No solo construimos software; creamos activos estratégicos que utilizan IA para automatizar el crecimiento y maximizar la rentabilidad de tu empresa."
+msgstr "We don't just build software; we create strategic assets that use AI to automate growth and maximize your company's profitability."
+
+msgid "Ingeniería Estratégica: De la Visión a la Realidad"
+msgstr "Strategic Engineering: From Vision to Reality"
+
+msgid "Mitigamos riesgos y aceleramos tu crecimiento mediante un proceso iterativo de alta precisión, diseñado para entregar software de clase mundial."
+msgstr "We mitigate risks and accelerate your growth through a high-precision iterative process, designed to deliver world-class software."
+
+msgid "Nos enfocamos en el cumplimiento de nuestra promesa de tiempos de entrega y alta calidad, utilizando metodologías probadas de 6 pasos."
+msgstr "We focus on delivering on our promise of time and high quality, using proven 6-step methodologies."
+
+msgid "Definición"
+msgstr "Definition"
+
+msgid "Primero escuchamos tu idea y determinamos las necesidades reales de tu empresa para trazar el camino correcto."
+msgstr "First, we listen to your idea and determine the real needs of your company to chart the right path."
+
+msgid "Planeación"
+msgstr "Planning"
+
+msgid "Entramos a la fase de conceptualización, donde proponemos una estrategia técnica sólida para hacer tu idea realidad."
+msgstr "We enter the conceptualization phase, where we propose a solid technical strategy to make your idea a reality."
+
+msgid "Diseño"
+msgstr "Design"
+
+msgid "Hacemos visual tu idea aplicando las últimas tendencias UX/UI y respetando la identidad corporativa de tu marca."
+msgstr "We visualize your idea applying the latest UX/UI trends and respecting your brand's corporate identity."
+
+msgid "Desarrollo"
+msgstr "Development"
+
+msgid "Construimos tu proyecto utilizando tecnologías de vanguardia, garantizando un código limpio, rápido y escalable."
+msgstr "We build your project using cutting-edge technologies, ensuring clean, fast, and scalable code."
+
+msgid "Calidad"
+msgstr "Quality"
+
+msgid "Sometemos el producto a pruebas rigurosas para asegurar que cumpla con los más altos estándares de rendimiento y seguridad."
+msgstr "We subject the product to rigorous testing to ensure it meets the highest standards of performance and security."
+
+msgid "Lanzamiento"
+msgstr "Launch"
+
+msgid "Tu idea ya es una realidad tangible, autogestionable y lista para generar los resultados de negocio que buscas."
+msgstr "Your idea is now a tangible reality, self-manageable, and ready to generate the business results you seek."
+
+msgid "Historia de Kairo"
+msgstr "Kairo's Story"
+
+msgid "Nacimos en Barranquilla con la convicción de que la tecnología debe ser una aliada para los negocios. Transformamos marcas tradicionales en líderes digitales competitivos."
+msgstr "We were born in Barranquilla with the conviction that technology should be an ally for businesses. We transform traditional brands into competitive digital leaders."
+
+msgid "Nuestro Origen"
+msgstr "Our Origin"
+
+msgid "Misión"
+msgstr "Mission"
+
+msgid "Impulsamos a las empresas de Colombia a crecer con soluciones tecnológicas accesibles y confiables, enfocadas en tiendas virtuales optimizadas y soporte humano."
+msgstr "We empower Colombian companies to grow with accessible and reliable technological solutions, focused on optimized online stores and human support."
+
+msgid "Propósito"
+msgstr "Purpose"
+
+msgid "Visión"
+msgstr "Vision"
+
+msgid "Ser el socio estratégico líder en transformación digital en Latinoamérica, llevando innovación con resultados medibles a cada rincón de la región."
+msgstr "To be the leading strategic partner in digital transformation in Latin America, bringing innovation with measurable results to every corner of the region."
+
+msgid "Destino"
+msgstr "Destiny"
+
+msgid "Construyendo el futuro con propósito"
+msgstr "Building the future with purpose"
+
+msgid "En Kairo, combinamos innovación tecnológica con acompañamiento humano para generar valor real y confianza."
+msgstr "At Kairo, we combine technological innovation with human guidance to generate real value and trust."
+
+msgid "Idea Sin Ejecución"
+msgstr "Idea Without Execution"
+
+msgid "Pierdes tiempo y dinero intentando descifrar la tecnología solo. Nosotros materializamos tu visión con arquitectura escalable."
+msgstr "You lose time and money trying to decipher technology alone. We materialize your vision with scalable architecture."
+
+msgid "Fuga de Clientes"
+msgstr "Customer Churn"
+
+msgid "Un sitio lento cuesta ventas reales cada segundo. Optimizamos tu Core Web Vitals para una experiencia instantánea."
+msgstr "A slow site costs real sales every second. We optimize your Core Web Vitals for an instantaneous experience."
+
+msgid "Silos de Datos"
+msgstr "Data Silos"
+
+msgid "El trabajo manual mata la productividad. Automatizamos flujos entre tu web, CRM y ERP para que tu equipo se enfoque en vender."
+msgstr "Manual work kills productivity. We automate flows between your website, CRM, and ERP so your team can focus on selling."
+
+msgid "Abandono Técnico"
+msgstr "Technical Abandonment"
+
+msgid "¿Tu programador anterior desapareció? Ofrecemos soporte 24/7 y garantía de código para que nunca te sientas solo."
+msgstr "Did your previous programmer disappear? We offer 24/7 support and code warranty so you never feel alone."
+
+msgid "¿Tu negocio está estancado por estos retos técnicos?"
+msgstr "Is your business stalled by these technical challenges?"
+
+msgid "Nueve de cada diez empresas LATAM pierden oportunidades por infraestructuras obsoletas. No seas una de ellas."
+msgstr "Nine out of ten LATAM companies lose opportunities due to obsolete infrastructure. Don't be one of them."
+
+msgid "Deja de acumular deuda técnica y empieza a escalar de verdad."
+msgstr "Stop accumulating technical debt and start truly scaling."
+
+msgid "Analizamos tu caso sin costo y te entregamos una propuesta de valor en menos de 24 horas."
+msgstr "We analyze your case at no cost and deliver a value proposal in less than 24 hours."
+
+msgid "Solicitar mi Auditoría Gratis"
+msgstr "Request my Free Audit"
+
+msgid "Ingeniería de Autor para negocios en escalada."
+msgstr "Signature Engineering for scaling businesses."
+
+msgid "Kairo nace con una misión clara: cerrar la brecha entre la ambición de negocio y la ejecución técnica de élite. Fundada bajo una filosofía de ingeniería rigurosa, nuestra estructura está diseñada para crecer junto a tu proyecto, asegurando que cada línea de código sea un activo estratégico."
+msgstr "Kairo was born with a clear mission: to close the gap between business ambition and elite technical execution. Founded on a philosophy of rigorous engineering, our structure is designed to grow alongside your project, ensuring that every line of code is a strategic asset."
+
+msgid "Arquitectura de Élite"
+msgstr "Elite Architecture"
+
+msgid "Recurso Gratuito"
+msgstr "Free Resource"
+
+msgid "Domina la IA en tu empresa antes que tu competencia."
+msgstr "Master AI in your company before your competition."
+
+msgid "Descarga nuestra guía exclusiva: \"Roadmap de Transformación Digital 2025\". Analizamos los 5 errores fatales que están costando millones a las empresas LATAM."
+msgstr "Download our exclusive guide: \"Digital Transformation Roadmap 2025\". We analyze the 5 fatal mistakes that are costing LATAM companies millions."
+
+msgid "Obtener Guía Gratis"
+msgstr "Get Free Guide"
+
+msgid "¿Hablamos de tu proyecto? 🚀"
+msgstr "Let's talk about your project? 🚀"
+
+msgid "Agendar Llamada"
+msgstr "Book a Call"

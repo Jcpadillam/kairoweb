@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (sectionId: string) => {
@@ -33,8 +35,7 @@ const Footer = () => {
               <span className="text-xl font-bold text-slate-900">Kairo</span>
             </motion.div>
             <p className="text-slate-500 text-sm leading-relaxed">
-              Transformamos ideas en soluciones digitales excepcionales.
-              Desarrollo web profesional con tecnologías de vanguardia.
+              {t.footer.description}
             </p>
             <div className="flex space-x-4">
               <motion.a
@@ -78,85 +79,46 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h4 className="text-slate-900 font-semibold text-lg">Servicios</h4>
+            <h4 className="text-slate-900 font-semibold text-lg">{t.footer.services.title}</h4>
             <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  Desarrollo Web
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  E-commerce
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  Optimización
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  Soporte Técnico
-                </button>
-              </li>
+              {t.footer.services.items.map((item, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => scrollToSection('services')}
+                    className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Company */}
           <div className="space-y-4">
-            <h4 className="text-slate-900 font-semibold text-lg">Empresa</h4>
+            <h4 className="text-slate-900 font-semibold text-lg">{t.footer.company.title}</h4>
             <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => scrollToSection('approach')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  Nuestro Proceso
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('projects')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  Proyectos
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('audience')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  Clientes
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
-                >
-                  Contacto
-                </button>
-              </li>
+              {t.footer.company.items.map((item, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => {
+                      if (index === 0) scrollToSection('approach');
+                      if (index === 1) scrollToSection('projects');
+                      if (index === 2) scrollToSection('audience');
+                      if (index === 3) scrollToSection('contact');
+                    }}
+                    className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-slate-900 font-semibold text-lg">Contacto</h4>
+            <h4 className="text-slate-900 font-semibold text-lg">{t.footer.contact}</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <div className="w-5 h-5 text-slate-400">
@@ -202,7 +164,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-slate-100 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-slate-400 text-sm">
-            © {currentYear} Kairo. Todos los derechos reservados.
+            {t.footer.rights.replace('2025', currentYear.toString())}
           </div>
 
           <div className="flex items-center space-x-6">
@@ -210,13 +172,13 @@ const Footer = () => {
               onClick={() => scrollToTop()}
               className="text-slate-400 hover:text-slate-900 transition-colors duration-300 text-sm"
             >
-              Política de Privacidad
+              {t.footer.privacy}
             </button>
             <button
               onClick={() => scrollToTop()}
               className="text-slate-400 hover:text-slate-900 transition-colors duration-300 text-sm"
             >
-              Términos de Servicio
+              {t.footer.terms}
             </button>
             <motion.button
               onClick={scrollToTop}

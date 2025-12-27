@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KairoWeb Home\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+
+msgid "Dominamos el código. Escalamos tu negocio."
+msgstr "Dominamos o código. Escalamos o seu negócio."
+
+msgid "Desarrollamos ecosistemas digitales digitales de alto rendimiento. eCommerce, integraciones y soporte experto diseñado para escalar sin fricciones."
+msgstr "Desenvolvemos ecossistemas digitais de alto desempenho. eCommerce, integrações e suporte especializado projetados para escalar sem atritos."
+
+msgid "E-commerce de Alto Impacto"
+msgstr "E-commerce de Alto Impacto"
+
+msgid "Optimizamos tu tienda en Shopify con motores de personalización y búsqueda inteligente que aumentan radicalmente el ticket promedio."
+msgstr "Otimizamos a sua loja Shopify com motores de personalização e busca inteligente que aumentam radicalmente o ticket médio."
+
+msgid "+35% Tasa de Conversión"
+msgstr "+35% Taxa de Conversão"
+
+msgid "Ecosistemas CMS con IA"
+msgstr "Ecossistemas CMS com IA"
+
+msgid "Potenciamos Strapi y WordPress con flujos de generación de contenido y SEO automatizado, transformando tu blog en una máquina de tráfico."
+msgstr "Potencializamos Strapi e WordPress com fluxos de geração de conteúdo e SEO automatizado, transformando seu blog em uma máquina de tráfego."
+
+msgid "SEO Automatizado"
+msgstr "SEO Automatizado"
+
+msgid "Desarrollo Web a la Medida"
+msgstr "Desenvolvimento Web Sob Medida"
+
+msgid "Construimos aplicaciones web de alto rendimiento con lógica de negocio potenciada por IA para resolver desafíos complejos y específicos."
+msgstr "Construímos aplicações web de alto desempenho com lógica de negócios impulsionada por IA para resolver desafios complexos e específicos."
+
+msgid "Arquitectura Escalable"
+msgstr "Arquitetura Escalável"
+
+msgid "Estrategia de Datos e IA"
+msgstr "Estratégia de Dados e IA"
+
+msgid "No implementamos IA por moda; analizamos tus datos para integrar soluciones que optimizan procesos y maximizan la rentabilidad real."
+msgstr "Não implementamos IA por moda; analisamos seus dados para integrar soluções que otimizam processos e maximizam a rentabilidade real."
+
+msgid "ROI Garantizado"
+msgstr "ROI Garantido"
+
+msgid "Propulsamos tu negocio con Ingeniería de IA."
+msgstr "Impulsionamos seu negócio com Engenharia de IA."
+
+msgid "No solo construimos software; creamos activos estratégicos que utilizan IA para automatizar el crecimiento y maximizar la rentabilidad de tu empresa."
+msgstr "Não apenas construímos software; criamos ativos estratégicos que usam IA para automatizar o crescimento e maximizar a rentabilidade da sua empresa."
+
+msgid "Ingeniería Estratégica: De la Visión a la Realidad"
+msgstr "Engenharia Estratégica: Da Visão à Realidade"
+
+msgid "Mitigamos riesgos y aceleramos tu crecimiento mediante un proceso iterativo de alta precisión, diseñado para entregar software de clase mundial."
+msgstr "Mitigamos riscos e aceleramos o seu crescimento através de um processo iterativo de alta precisão, concebido para entregar software de classe mundial."
+
+msgid "Nos enfocamos en el cumplimiento de nuestra promesa de tiempos de entrega y alta calidad, utilizando metodologías probadas de 6 pasos."
+msgstr "Nos concentramos no cumprimento da nossa promessa de prazos de entrega e alta qualidade, utilizando metodologias comprovadas de 6 etapas."
+
+msgid "Definición"
+msgstr "Definição"
+
+msgid "Primero escuchamos tu idea y determinamos las necesidades reales de tu empresa para trazar el camino correcto."
+msgstr "Primeiro ouvimos sua ideia e determinamos as reais necessidades da sua empresa para traçar o caminho certo."
+
+msgid "Planeación"
+msgstr "Planejamento"
+
+msgid "Entramos a la fase de conceptualización, donde proponemos una estrategia técnica sólida para hacer tu idea realidad."
+msgstr "Entramos na fase de conceituação, onde propomos uma estratégia técnica sólida para tornar sua ideia realidade."
+
+msgid "Diseño"
+msgstr "Design"
+
+msgid "Hacemos visual tu idea aplicando las últimas tendencias UX/UI y respetando la identidad corporativa de tu marca."
+msgstr "Tornamos visual sua ideia aplicando as últimas tendências de UX/UI e respeitando a identidade corporativa da sua marca."
+
+msgid "Desarrollo"
+msgstr "Desenvolvimento"
+
+msgid "Construimos tu proyecto utilizando tecnologías de vanguardia, garantizando un código limpio, rápido y escalable."
+msgstr "Construímos seu projeto utilizando tecnologias de ponta, garantindo um código limpo, rápido e escalável."
+
+msgid "Calidad"
+msgstr "Qualidade"
+
+msgid "Sometemos el producto a pruebas rigurosas para asegurar que cumpla con los más altos estándares de rendimiento y seguridad."
+msgstr "Submetemos o produto a testes rigorosos para garantir que cumpra os mais altos padrões de desempenho e segurança."
+
+msgid "Lanzamiento"
+msgstr "Lançamento"
+
+msgid "Tu idea ya es una realidad tangible, autogestionable y lista para generar los resultados de negocio que buscas."
+msgstr "Sua ideia já é uma realidade tangível, autogerenciável e pronta para gerar os resultados de negócios que você busca."
+
+msgid "Historia de Kairo"
+msgstr "A História da Kairo"
+
+msgid "Nacimos en Barranquilla con la convicción de que la tecnología debe ser una aliada para los negocios. Transformamos marcas tradicionales en líderes digitales competitivos."
+msgstr "Nascemos em Barranquilla com a convicção de que a tecnologia deve ser uma aliada para os negócios. Transformamos marcas tradicionais em líderes digitais competitivos."
+
+msgid "Nuestro Origen"
+msgstr "Nossa Origem"
+
+msgid "Misión"
+msgstr "Missão"
+
+msgid "Impulsamos a las empresas de Colombia a crecer con soluciones tecnológicas accesibles y confiables, enfocadas en tiendas virtuales optimizadas y soporte humano."
+msgstr "Impulsionamos as empresas da Colômbia a crescer com soluções tecnológicas acessíveis e confiáveis, focadas em lojas virtuais otimizadas e suporte humano."
+
+msgid "Propósito"
+msgstr "Propósito"
+
+msgid "Visión"
+msgstr "Visão"
+
+msgid "Ser el socio estratégico líder en transformación digital en Latinoamérica, llevando innovación con resultados medibles a cada rincón de la región."
+msgstr "Ser o parceiro estratégico líder em transformação digital na América Latina, levando inovação com resultados mensuráveis a cada canto da região."
+
+msgid "Destino"
+msgstr "Destino"
+
+msgid "Construyendo el futuro con propósito"
+msgstr "Construindo o futuro com propósito"
+
+msgid "En Kairo, combinamos innovación tecnológica con acompañamiento humano para generar valor real y confianza."
+msgstr "Na Kairo, combinamos inovação tecnológica com acompanhamento humano para gerar valor real e confiança."
+
+msgid "Idea Sin Ejecución"
+msgstr "Ideia Sem Execução"
+
+msgid "Pierdes tiempo y dinero intentando descifrar la tecnología solo. Nosotros materializamos tu visión con arquitectura escalable."
+msgstr "Você perde tempo e dinheiro tentando decifrar a tecnologia sozinho. Nós materializamos sua visão com arquitetura escalável."
+
+msgid "Fuga de Clientes"
+msgstr "Fuga de Clientes"
+
+msgid "Un sitio lento cuesta ventas reales cada segundo. Optimizamos tu Core Web Vitals para una experiencia instantánea."
+msgstr "Um site lento custa vendas reais a cada segundo. Otimizamos seus Core Web Vitals para uma experiência instantânea."
+
+msgid "Silos de Datos"
+msgstr "Silos de Dados"
+
+msgid "El trabajo manual mata la productividad. Automatizamos flujos entre tu web, CRM y ERP para que tu equipo se enfoque en vender."
+msgstr "O trabalho manual mata a produtividade. Automatizamos fluxos entre seu site, CRM e ERP para que sua equipe foque em vender."
+
+msgid "Abandono Técnico"
+msgstr "Abandono Técnico"
+
+msgid "¿Tu programador anterior desapareció? Ofrecemos soporte 24/7 y garantía de código para que nunca te sientas solo."
+msgstr "Seu programador anterior desapareceu? Oferecemos suporte 24/7 e garantia de código para que você nunca se sinta sozinho."
+
+msgid "¿Tu negocio está estancado por estos retos técnicos?"
+msgstr "Seu negócio está estagnado por esses desafios técnicos?"
+
+msgid "Nueve de cada diez empresas LATAM pierden oportunidades por infraestructuras obsoletas. No seas una de ellas."
+msgstr "Nove em cada dez empresas LATAM perdem oportunidades por infraestruturas obsoletas. Não seja uma delas."
+
+msgid "Deja de acumular deuda técnica y empieza a escalar de verdad."
+msgstr "Pare de acumular dívida técnica e comece a escalar de verdade."
+
+msgid "Analizamos tu caso sin costo y te entregamos una propuesta de valor en menos de 24 horas."
+msgstr "Analisamos seu caso sem custo e entregamos uma proposta de valor em menos de 24 horas."
+
+msgid "Solicitar mi Auditoría Gratis"
+msgstr "Solicitar minha Auditoria Grátis"
+
+msgid "Ingeniería de Autor para negocios en escalada."
+msgstr "Engenharia de Autor para negócios em escala."
+
+msgid "Kairo nace con una misión clara: cerrar la brecha entre la ambición de negocio y la ejecución técnica de élite. Fundada bajo una filosofía de ingeniería rigurosa, nuestra estructura está diseñada para crecer junto a tu proyecto, asegurando que cada línea de código sea un activo estratégico."
+msgstr "A Kairo nasce com uma missão clara: fechar a lacuna entre a ambição de negócios e a execução técnica de elite. Fundada sob uma filosofia de engenharia rigorosa, nossa estrutura é projetada para crescer junto com seu projeto, garantindo que cada linha de código seja um ativo estratégico."
+
+msgid "Arquitectura de Élite"
+msgstr "Arquitetura de Elite"
+
+msgid "Recurso Gratuito"
+msgstr "Recurso Gratuito"
+
+msgid "Domina la IA en tu empresa antes que tu competencia."
+msgstr "Domine a IA na sua empresa antes da sua concorrência."
+
+msgid "Descarga nuestra guía exclusiva: \"Roadmap de Transformación Digital 2025\". Analizamos los 5 errores fatales que están costando millones a las empresas LATAM."
+msgstr "Baixe nosso guia exclusivo: \"Roadmap de Transformação Digital 2025\". Analisamos os 5 erros fatais que estão custando milhões às empresas LATAM."
+
+msgid "Obtener Guía Gratis"
+msgstr "Obter Guia Grátis"
+
+msgid "¿Hablamos de tu proyecto? 🚀"
+msgstr "Vamos falar sobre seu projeto? 🚀"
+
+msgid "Agendar Llamada"
+msgstr "Agendar Chamada"

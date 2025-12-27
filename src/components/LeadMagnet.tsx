@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function LeadMagnet() {
+    const { t } = useLanguage();
+
     return (
         <section className="py-24 px-6 bg-slate-900 overflow-hidden relative">
             {/* Grid Pattern */}
@@ -22,18 +25,18 @@ export default function LeadMagnet() {
                         viewport={{ once: true }}
                     >
                         <span className="px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-widest rounded-full border border-blue-500/20 mb-6 inline-block">
-                            Recurso Gratuito
+                            {t.leadMagnet.badge}
                         </span>
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
-                            Domina la IA en tu empresa <br /> antes que tu competencia.
+                            {t.leadMagnet.title} <br /> {t.leadMagnet.title2}
                         </h2>
                         <p className="text-slate-400 text-lg mb-8 max-w-xl">
-                            Descarga nuestra guía exclusiva: " Roadmap de Transformación Digital 2025". Analizamos los 5 errores fatales que están costando millones a las empresas LATAM.
+                            {t.leadMagnet.desc}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
                             <input
                                 type="email"
-                                placeholder="Tu email principal"
+                                placeholder={t.leadMagnet.placeholder}
                                 className="bg-slate-800 border border-slate-700 text-white px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all flex-grow"
                             />
                             <Button
@@ -41,11 +44,11 @@ export default function LeadMagnet() {
                                 size="lg"
                                 className="!py-4 shadow-xl shadow-blue-500/20"
                             >
-                                Obtener Guía Gratis
+                                {t.leadMagnet.button}
                             </Button>
                         </div>
                         <p className="text-[10px] text-slate-500 mt-4 italic">
-                            * No enviamos spam. Solo valor técnico puro.
+                            {t.leadMagnet.spam}
                         </p>
                     </motion.div>
                 </div>

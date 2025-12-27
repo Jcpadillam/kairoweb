@@ -2,22 +2,12 @@ import { useState, useEffect, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Button from './Button';
+import { useLanguage } from '../context/LanguageContext';
 
-const menuItems = [
-  { name: 'Inicio', path: '/' },
-  {
-    name: 'Servicios',
-    path: '/servicios',
-    dropdown: [
-      { name: 'Desarrollo Web', path: '/servicios/web' },
-      { name: 'eCommerce', path: '/servicios/ecommerce' },
-      { name: 'Apps Móviles', path: '/servicios/apps' },
-      { name: 'Soporte Técnico', path: '/servicios/soporte' },
-    ]
-  },
-  { name: 'Portafolio', path: '/portafolio' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Contacto', path: '/contacto' },
+const languages = [
+  { code: 'ES', label: 'Español', flag: '🇪-🇸' },
+  { code: 'EN', label: 'English', flag: '🇺-🇸' },
+  { code: 'PT', label: 'Português', flag: '🇧-🇷' }
 ];
 
 const Header = () => {
@@ -25,7 +15,27 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const { language: currentLang, setLanguage: setCurrentLang, t } = useLanguage();
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const location = useLocation();
+
+  const menuItems = [
+    { name: t.header.menu.home, path: '/' },
+    {
+      name: t.header.menu.services,
+      path: '/servicios',
+      dropdown: [
+        { name: t.header.menu.sub.web, path: '/servicios/web' },
+        { name: t.header.menu.sub.ecommerce, path: '/servicios/ecommerce' },
+        { name: t.header.menu.sub.apps, path: '/servicios/apps' },
+        { name: t.header.menu.sub.support, path: '/servicios/soporte' },
+      ]
+    },
+    { name: t.header.menu.portfolio, path: '/portafolio' },
+    { name: t.header.menu.blog, path: '/blog' },
+    { name: t.header.menu.contact, path: '/contacto' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +50,7 @@ const Header = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
+    setIsLangMenuOpen(false);
   }, [location.pathname]);
 
   return (
@@ -67,7 +78,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-[#38BDF8] transition-colors duration-300">Kairo</span>
-              <span className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-medium">Digital Agency</span>
+              <span className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-medium">{t.header.digitalAgency}</span>
             </div>
           </Link>
 
@@ -124,7 +135,7 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-2xl border border-black/5 rounded-2xl p-2 shadow-xl"
+                        className="absolute top-full left-0 mt-2 w-64 bg-white border border-black/5 rounded-2xl p-2 shadow-xl"
                       >
                         <div className="grid gap-1">
                           {item.dropdown.map((subItem) => (
@@ -147,15 +158,52 @@ const Header = () => {
           </div>
 
           {/* CTA Group Desktop */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <div className="h-4 w-[1px] bg-white/10" />
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Language Switcher Desktop */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-black/5 transition-colors text-sm font-bold text-slate-600"
+              >
+                <span>{currentLang}</span>
+                <svg className={`w-3 h-3 transition-transform ${isLangMenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <AnimatePresence>
+                {isLangMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    className="absolute top-full right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-1"
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setCurrentLang(lang.code as any);
+                          setIsLangMenuOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${currentLang === lang.code ? 'bg-blue-50 text-[#2F80ED]' : 'hover:bg-slate-50 text-slate-600'}`}
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div className="h-4 w-[1px] bg-black/10" />
+
             <Button
               href="https://wa.me/573001234567"
               variant="primary"
               size="sm"
               className="shadow-[0_0_20px_rgba(47,128,237,0.3)] hover:shadow-[0_0_25px_rgba(47,128,237,0.5)] transition-shadow"
             >
-              Empezar
+              {t.header.start}
             </Button>
           </div>
 
@@ -192,7 +240,7 @@ const Header = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="lg:hidden mt-4 overflow-hidden will-change-[clip-path,opacity]"
             >
-              <div className="bg-white/95 backdrop-blur-2xl border border-black/5 rounded-3xl p-4 space-y-2 mb-4 shadow-xl">
+              <div className="bg-white border border-black/5 rounded-3xl p-4 space-y-2 mb-4 shadow-xl">
                 {menuItems.map((item, idx) => (
                   <motion.div
                     key={item.path}
@@ -256,6 +304,23 @@ const Header = () => {
                     </AnimatePresence>
                   </motion.div>
                 ))}
+
+                {/* Mobile Language Switcher */}
+                <div className="px-5 py-4 border-t border-slate-100 mt-2">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">{t.header.language}</p>
+                  <div className="flex gap-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => setCurrentLang(lang.code)}
+                        className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all ${currentLang === lang.code ? 'bg-[#2F80ED] text-white shadow-lg shadow-blue-500/20' : 'bg-slate-50 text-slate-600 hover:bg-slate-100'}`}
+                      >
+                        {lang.code}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -268,7 +333,7 @@ const Header = () => {
                     size="lg"
                     className="w-full justify-center shadow-[0_0_20px_rgba(47,128,237,0.2)]"
                   >
-                    Hablar por WhatsApp
+                    {t.header.whatsapp}
                   </Button>
                 </motion.div>
               </div>

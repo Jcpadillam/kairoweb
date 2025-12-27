@@ -7,6 +7,7 @@ import TrustSignals from "../components/TrustSignals";
 import MiniCloser from "../components/MiniCloser";
 import HumanFactor from "../components/HumanFactor";
 import StandardOfWork from "../components/StandardOfWork";
+import AgileProcess from "../components/AgileProcess";
 import LeadMagnet from "../components/LeadMagnet";
 import SEO from "../components/SEO";
 import { motion } from 'framer-motion';
@@ -91,6 +92,8 @@ export default function Home() {
                     </div>
 
                     <StandardOfWork />
+
+                    <AgileProcess />
 
                     <div id="projects">
                         <RecentProjects />

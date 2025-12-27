@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef } from 'react';
 import Button, { ArrowRightIcon } from './Button';
+import { useLanguage } from '../context/LanguageContext';
 
 // --- NexusBackground Component (Cloudflare-style) ---
 const NexusBackground = () => {
@@ -176,6 +177,8 @@ const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export default function KairoHero() {
+  const { t } = useLanguage();
+
   return (
     <div className='relative bg-white text-slate-900 overflow-hidden min-h-[90vh] flex items-center'>
       {/* Background Container */}
@@ -220,8 +223,8 @@ export default function KairoHero() {
           >
             {/* Badges */}
             <div className='mb-6 flex flex-wrap'>
-              <Badge>Auditoría Estratégica Gratis</Badge>
-              <Badge>LATAM Tech Hub • Impulso Global</Badge>
+              <Badge>{t.hero.auditBadge}</Badge>
+              <Badge>{t.hero.badge}</Badge>
             </div>
 
             {/* Heading Principal */}
@@ -229,8 +232,8 @@ export default function KairoHero() {
               variants={fadeUp}
               className='text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6 text-slate-900 leading-[1.1]'
             >
-              Dominamos el código. <br />
-              <span className="text-[#2F80ED]">Escalamos tu negocio.</span>
+              {t.hero.titleLine1} <br />
+              <span className="text-[#2F80ED]">{t.hero.titleLine2}</span>
             </motion.h1>
 
             {/* Subtítulo */}
@@ -238,8 +241,7 @@ export default function KairoHero() {
               variants={fadeUp}
               className='mt-4 max-w-2xl text-lg md:text-xl leading-relaxed text-slate-600 mb-8'
             >
-              Desarrollamos ecosistemas digitales digitales de alto rendimiento. <br className="hidden md:block" />
-              eCommerce, integraciones y soporte experto diseñado para escalar sin fricciones.
+              {t.hero.description}
             </motion.p>
 
             {/* Botones de Acción */}
@@ -253,7 +255,7 @@ export default function KairoHero() {
                 size='lg'
                 className="px-8 py-3.5 text-base shadow-lg shadow-blue-500/20"
               >
-                Lanzar mi proyecto
+                {t.hero.ctaPrimary}
               </Button>
               <Button
                 href='#soluciones'
@@ -263,7 +265,7 @@ export default function KairoHero() {
                 icon={<ArrowRightIcon />}
                 iconPosition='right'
               >
-                Conocer el Método
+                {t.hero.ctaSecondary}
               </Button>
             </motion.div>
 
@@ -272,11 +274,7 @@ export default function KairoHero() {
               variants={fadeUp}
               className='mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl'
             >
-              {[
-                'Ingeniería eCommerce',
-                'Arquitectura API',
-                'Ecosistemas 24/7'
-              ].map((label) => (
+              {t.hero.features.map((label: string) => (
                 <div key={label} className="flex items-center gap-3">
                   <CheckIcon />
                   <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">{label}</span>
@@ -285,7 +283,7 @@ export default function KairoHero() {
             </motion.div>
 
             <motion.p variants={fadeUp} className='mt-8 text-xs text-slate-400 font-medium italic'>
-              Propuesta técnica en 24h • Primera sesión estratégica sin costo
+              {t.hero.footerNote}
             </motion.p>
           </motion.div>
         </div>

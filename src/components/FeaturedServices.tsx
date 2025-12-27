@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 // --- Simplified & Sharp Icons (Brand Alignment) ---
 
@@ -47,7 +48,7 @@ const OptimizationIcon = ({ className = '' }: { className?: string }) => (
 
 // --- TechCard Component (Optimized) ---
 
-const ServiceCard = ({ title, description, icon: Icon, index, tag, tech }: { title: string, description: string, icon: React.FC<{ className?: string }>, index: number, tag: string, tech: string }) => {
+const ServiceCard = ({ title, description, icon: Icon, index, tag, tech, techLabel }: { title: string, description: string, icon: React.FC<{ className?: string }>, index: number, tag: string, tech: string, techLabel: string }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 15 }}
@@ -77,7 +78,7 @@ const ServiceCard = ({ title, description, icon: Icon, index, tag, tech }: { tit
       </p>
 
       <div className="pt-6 border-t border-slate-50 mt-auto">
-        <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Tecnologías Hub</p>
+        <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">{techLabel}</p>
         <p className="text-xs font-semibold text-slate-600 group-hover:text-slate-900 transition-colors">{tech}</p>
       </div>
     </motion.div>
@@ -85,34 +86,36 @@ const ServiceCard = ({ title, description, icon: Icon, index, tag, tech }: { tit
 };
 
 export default function FeaturedServices() {
+  const { t } = useLanguage();
+
   const services = [
     {
-      icon: WebIcon,
-      title: 'Plataformas Web con IA',
-      description: 'Desarrollamos ecosistemas digitales que aprenden de tus usuarios para ofrecer personalización masiva y escalabilidad sin límites.',
-      tag: 'Crecimiento Exponencial',
-      tech: 'Next.js, React, OpenAI API'
-    },
-    {
       icon: EcommerceIcon,
-      title: 'E-commerce Inteligente',
-      description: 'Llevamos tu tienda online al siguiente nivel con motores de recomendación predictivos y checkout optimizado por inteligencia de datos.',
-      tag: '+35% Tasa de Conversión',
-      tech: 'Shopify, Headless, IA Predictiva'
+      title: t.services.items[0].title,
+      description: t.services.items[0].desc,
+      tag: t.services.items[0].tag,
+      tech: 'Shopify, PrestaShop' // Keep tech stacks untranslated as they are proper nouns
     },
     {
-      icon: AIIcon,
-      title: 'Agentes de IA para Web',
-      description: 'Integramos agentes conversacionales autónomos que califican leads y cierran ventas 24/7, integrándose con tu CRM favorito.',
-      tag: 'Ventas Automatizadas',
-      tech: 'LLMs, RAG, Integración CRM'
+      icon: WebIcon,
+      title: t.services.items[1].title,
+      description: t.services.items[1].desc,
+      tag: t.services.items[1].tag,
+      tech: 'Strapi, WordPress'
     },
     {
       icon: OptimizationIcon,
-      title: 'Optimización Gen-AI',
-      description: 'Transformamos procesos obsoletos en flujos de trabajo de alto rendimiento mediante la implementación de IA generativa a medida.',
-      tag: 'Eficiencia Operativa',
-      tech: 'Python, LangChain, Cloud Native'
+      title: t.services.items[2].title,
+      description: t.services.items[2].desc,
+      tag: t.services.items[2].tag,
+      tech: 'Next.js, React, Tailwind'
+    },
+    {
+      icon: AIIcon,
+      title: t.services.items[3].title,
+      description: t.services.items[3].desc,
+      tag: t.services.items[3].tag,
+      tech: 'Python, Vercel'
     },
   ];
 
@@ -129,7 +132,7 @@ export default function FeaturedServices() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#2F80ED] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-100/50"
           >
-            Servicios Enterprise
+            {t.services.badge}
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -137,7 +140,7 @@ export default function FeaturedServices() {
             viewport={{ once: true }}
             className='text-3xl md:text-6xl font-black text-white tracking-tight leading-[1] mb-6'
           >
-            Propulsamos tu negocio <br className="hidden md:block" /> con <span className='text-[#2F80ED]'>Ingeniería de IA</span>.
+            {t.services.title.split(' ').slice(0, 3).join(' ')} <br className="hidden md:block" /> {t.services.title.split(' ').slice(3).join(' ')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -146,13 +149,13 @@ export default function FeaturedServices() {
             transition={{ delay: 0.1 }}
             className='mt-4 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed'
           >
-            No solo construimos software; creamos activos estratégicos que utilizan IA para automatizar el crecimiento y maximizar la rentabilidad de tu empresa.
+            {t.services.subtitle}
           </motion.p>
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} index={index} />
+            <ServiceCard key={index} {...service} index={index} techLabel={t.services.techStackLabel} />
           ))}
         </div>
       </div>

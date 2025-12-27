@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import Button, { ArrowRightIcon } from './Button';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function MiniCloser() {
+    const { t } = useLanguage();
+
     return (
         <section className="py-24 px-6 bg-[#2F80ED] relative overflow-hidden">
             {/* Decorative Orbs */}
@@ -15,10 +18,10 @@ export default function MiniCloser() {
                     viewport={{ once: true }}
                 >
                     <h2 className="text-4xl md:text-5xl font-black text-white mb-8 leading-[1.1] tracking-tight">
-                        ¿Listo para construir el <br /> <span className="opacity-80">próximo nivel</span> de tu negocio?
+                        {t.miniCloser.title} <br /> <span className="opacity-80">{t.miniCloser.title2}</span>
                     </h2>
                     <p className="text-blue-50/80 text-lg mb-12 max-w-xl mx-auto">
-                        Hablemos de tus objetivos técnicos. Te entregamos un roadmap de ejecución sin costo inicial.
+                        {t.miniCloser.desc}
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -29,11 +32,11 @@ export default function MiniCloser() {
                             className="!bg-white !text-[#2F80ED] !border-none px-12 py-6 rounded-2xl shadow-2xl hover:scale-105 transition-all text-lg font-bold"
                             icon={<ArrowRightIcon />}
                         >
-                            Agendar Consultoría
+                            {t.miniCloser.button}
                         </Button>
                         <div className="text-left hidden sm:block">
-                            <p className="text-sm font-bold text-white">Respuesta hoy mismo</p>
-                            <p className="text-xs text-blue-100/70">Cupos limitados por mes</p>
+                            <p className="text-sm font-bold text-white">{t.miniCloser.note}</p>
+                            <p className="text-xs text-blue-100/70">{t.miniCloser.availability}</p>
                         </div>
                     </div>
                 </motion.div>

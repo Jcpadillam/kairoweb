@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Button, { ArrowRightIcon } from './Button';
+import { useLanguage } from '../context/LanguageContext';
 
 // --- Simplified & Fast Icons (Nexus/Minimal Style) ---
 
@@ -73,26 +74,28 @@ const TechCard = ({ title, description, icon: Icon, index }: { title: string, de
 };
 
 export default function TargetAudience() {
+  const { t } = useLanguage();
+
   const cards = [
     {
       icon: IdeaIcon,
-      title: 'Idea Sin Ejecución',
-      description: 'Pierdes tiempo y dinero intentando descifrar la tecnología solo. Nosotros materializamos tu visión con arquitectura escalable.',
+      title: t.targetAudience.cards[0].title,
+      description: t.targetAudience.cards[0].desc,
     },
     {
       icon: SpeedIcon,
-      title: 'Fuga de Clientes',
-      description: 'Un sitio lento cuesta ventas reales cada segundo. Optimizamos tu Core Web Vitals para una experiencia instantánea.',
+      title: t.targetAudience.cards[1].title,
+      description: t.targetAudience.cards[1].desc,
     },
     {
       icon: IntegrationIcon,
-      title: 'Silos de Datos',
-      description: 'El trabajo manual mata la productividad. Automatizamos flujos entre tu web, CRM y ERP para que tu equipo se enfoque en vender.',
+      title: t.targetAudience.cards[2].title,
+      description: t.targetAudience.cards[2].desc,
     },
     {
       icon: SupportIcon,
-      title: 'Abandono Técnico',
-      description: '¿Tu programador anterior desapareció? Ofrecemos soporte 24/7 y garantía de código para que nunca te sientas solo.',
+      title: t.targetAudience.cards[3].title,
+      description: t.targetAudience.cards[3].desc,
     },
   ];
 
@@ -114,7 +117,7 @@ export default function TargetAudience() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            Casos de Uso Reales
+            {t.targetAudience.badge}
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -122,7 +125,7 @@ export default function TargetAudience() {
             viewport={{ once: true }}
             className='text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-6'
           >
-            ¿Tu negocio está <span className='text-[#2F80ED]'>estancado</span> <br className="hidden md:block" /> por estos retos técnicos?
+            {t.targetAudience.title} <span className='text-[#2F80ED]'>{t.targetAudience.titleHighlight}</span> <br className="hidden md:block" /> {t.targetAudience.titleSuffix}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -131,7 +134,7 @@ export default function TargetAudience() {
             transition={{ delay: 0.1 }}
             className='mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed'
           >
-            Nueve de cada diez empresas LATAM pierden oportunidades por infraestructuras obsoletas. No seas una de ellas.
+            {t.targetAudience.subtitle}
           </motion.p>
         </div>
 
@@ -149,8 +152,8 @@ export default function TargetAudience() {
           transition={{ delay: 0.5 }}
           className="mt-12 flex flex-wrap justify-center items-center gap-6 grayscale opacity-40 hover:grayscale-0 transition-all duration-500"
         >
-          <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest mr-4">Confiado por líderes en:</span>
-          {['Fintech', 'Ecommerce', 'Logística', 'SaaS'].map((sector) => (
+          <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest mr-4">{t.targetAudience.trustedBy}</span>
+          {t.targetAudience.trustedSectors.map((sector) => (
             <span key={sector} className="px-3 py-1 bg-slate-100 rounded text-[10px] font-bold text-slate-600">{sector}</span>
           ))}
         </motion.div>
@@ -168,10 +171,10 @@ export default function TargetAudience() {
 
           <div className="relative z-10">
             <h3 className='text-3xl md:text-4xl font-bold mb-6 leading-tight'>
-              Deja de acumular deuda técnica <br className="hidden md:block" /> y empieza a <span className="text-blue-100 underline decoration-blue-300 decoration-2 underline-offset-8">escalar de verdad</span>.
+              {t.targetAudience.ctaBox.title} <br className="hidden md:block" /> {t.targetAudience.ctaBox.title2} <span className="text-blue-100 underline decoration-blue-300 decoration-2 underline-offset-8">{t.targetAudience.ctaBox.titleHighlight}</span>.
             </h3>
             <p className="text-blue-50/80 max-w-2xl mx-auto mb-10 text-lg">
-              Analizamos tu caso sin costo y te entregamos una propuesta de valor en menos de 24 horas.
+              {t.targetAudience.ctaBox.desc}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Button
@@ -181,14 +184,14 @@ export default function TargetAudience() {
                 className="!bg-white !text-[#2F80ED] !border-none px-12 py-6 rounded-2xl shadow-xl hover:!bg-blue-50 transition-all active:scale-95"
                 icon={<ArrowRightIcon />}
               >
-                Solicitar mi Auditoría Gratis
+                {t.targetAudience.ctaBox.button}
               </Button>
               <div className="flex flex-col items-center sm:items-start">
                 <p className="text-sm text-blue-50/90 font-semibold tracking-wide">
-                  Respuesta en menos de 24h
+                  {t.targetAudience.ctaBox.note1}
                 </p>
                 <p className="text-xs text-blue-100/70">
-                  Sin compromiso • 100% Confidencial
+                  {t.targetAudience.ctaBox.note2}
                 </p>
               </div>
             </div>

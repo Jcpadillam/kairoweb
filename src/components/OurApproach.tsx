@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 // --- Simplified & Sharp Icons (Brand Alignment) ---
 
@@ -33,24 +34,26 @@ const SupportIcon = ({ className = '' }: { className?: string }) => (
 );
 
 export default function OurApproach() {
+  const { t } = useLanguage();
+
   const steps = [
     {
       icon: StrategyIcon,
-      title: 'Estrategia de Crecimiento',
-      description: 'Aliamos tu visión de negocio con la tecnología correcta. No solo programamos, diseñamos el camino al éxito.',
-      tag: 'ROI Enfocado'
+      title: t.ourApproach.steps[0].title,
+      description: t.ourApproach.steps[0].desc,
+      tag: t.ourApproach.steps[0].tag
     },
     {
       icon: CodeIcon,
-      title: 'Ingeniería Scalable',
-      description: 'Construimos con estándares de Amazon y Google. Código limpio, tiempos de carga mínimos y seguridad blindada.',
-      tag: 'Alto Rendimiento'
+      title: t.ourApproach.steps[1].title,
+      description: t.ourApproach.steps[1].desc,
+      tag: t.ourApproach.steps[1].tag
     },
     {
       icon: SupportIcon,
-      title: 'Garantía de Continuidad',
-      description: 'Servidores premium y soporte prioritario. Tu web no es un gasto, es un activo que cuidamos 24/7.',
-      tag: 'Soporte 24/7'
+      title: t.ourApproach.steps[2].title,
+      description: t.ourApproach.steps[2].desc,
+      tag: t.ourApproach.steps[2].tag
     },
   ];
 
@@ -67,7 +70,7 @@ export default function OurApproach() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#2F80ED] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-100/50"
           >
-            Metodología Ágil
+            {t.ourApproach.badge}
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -75,7 +78,7 @@ export default function OurApproach() {
             viewport={{ once: true }}
             className='text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-6'
           >
-            Más que código, entregamos <br className="hidden md:block" /> <span className='text-[#2F80ED]'>resultados de negocio</span>.
+            {t.ourApproach.titleLine1} <br className="hidden md:block" /> <span className='text-[#2F80ED]'>{t.ourApproach.titleLine2}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -84,7 +87,7 @@ export default function OurApproach() {
             transition={{ delay: 0.1 }}
             className='mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed'
           >
-            Nuestro proceso está diseñado para minimizar riesgos y maximizar el retorno de tu inversión tecnológica.
+            {t.ourApproach.subtitle}
           </motion.p>
         </div>
 
