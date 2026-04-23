@@ -50,6 +50,7 @@ export default function HumanFactor() {
                                 src="https://images1.novopayment.com/wp-content/uploads/2023/12/shopify-developer.webp"
                                 alt="Shopify Developer Dashboard"
                                 className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                                loading="lazy"
                                 onError={(e) => {
                                     // Fallback image if the primary one fails
                                     (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop";

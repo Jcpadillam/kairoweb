@@ -12,10 +12,7 @@ import SEO from "../components/SEO";
 import FinalCTA from "../components/FinalCTA";
 import { motion } from 'framer-motion';
 
-// Componentes dummy para evitar errores si no existen
-const FloatingParticles = () => null;
-const NeuralConnections = () => null;
-
+// No extras for performance
 export default function Home() {
     return (
         <div className='relative bg-white text-slate-900 overflow-hidden'>
@@ -26,45 +23,20 @@ export default function Home() {
                 ogImage="/assets/hero-banner.png"
             />
             <section
-                className='group relative isolate overflow-hidden min-h-screen flex items-center'
+                className='group relative isolate overflow-hidden min-h-screen'
             >
-                {/* Fondo con efecto de partículas y conexiones */}
-                <div className='absolute inset-0 -z-30'>
-                    {/* Base gradient */}
-                    <div className='absolute inset-0 bg-white' />
-                    {/* Aurora effect mejorado para tema claro */}
-                    <motion.div
-                        className="absolute inset-0 opacity-20"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.2 }}
-                        transition={{ duration: 2 }}
-                        style={{
-                            background: `
-                radial-gradient(40% 40% at 20% 25%, rgba(47, 128, 237, 0.15), transparent 70%),
-                radial-gradient(45% 45% at 80% 20%, rgba(99, 102, 241, 0.12), transparent 65%),
-                radial-gradient(35% 35% at 65% 80%, rgba(56, 189, 248, 0.1), transparent 60%)
-              `
-                        }}
-                    />
-                    {/* Efecto de grid tecnológico suave */}
-                    <div className="absolute inset-0 opacity-5">
+                {/* Simplified Background */}
+                <div className='absolute inset-0 -z-30 bg-white'>
+                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="black" strokeWidth="0.5" />
-                                </pattern>
-                                <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-                                    <rect width="80" height="80" fill="url(#smallGrid)" />
-                                    <path d="M 80 0 L 0 0 0 80" fill="none" stroke="black" strokeWidth="1" />
+                                <pattern id="smallGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" strokeWidth="0.5" />
                                 </pattern>
                             </defs>
-                            <rect width="100%" height="100%" fill="url(#grid)" />
+                            <rect width="100%" height="100%" fill="url(#smallGrid)" />
                         </svg>
                     </div>
-                    {/* Partículas flotantes */}
-                    <FloatingParticles />
-                    {/* Conexiones neuronales */}
-                    <NeuralConnections />
                 </div>
                 {/* Contenido principal */}
                 <div className="w-full">

@@ -16,8 +16,9 @@ const NexusBackground = () => {
 
     let animationFrameId: number;
     let particles: Particle[] = [];
-    const particleCount = 80;
-    const connectionDistance = 180;
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 30 : 60; // Reduced from 80
+    const connectionDistance = 150; // Reduced from 180
     const mouse = { x: 0, y: 0, active: false };
 
     class Particle {
@@ -30,9 +31,9 @@ const NexusBackground = () => {
       constructor(width: number, height: number) {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.size = Math.random() * 2.5 + 1.5;
+        this.vx = (Math.random() - 0.5) * 0.3; // Slower movement
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.size = Math.random() * 2 + 1; // Slightly smaller
       }
 
       update(width: number, height: number) {
@@ -42,14 +43,13 @@ const NexusBackground = () => {
         if (this.x < 0 || this.x > width) this.vx *= -1;
         if (this.y < 0 || this.y > height) this.vy *= -1;
 
-        // Interaction with mouse
-        if (mouse.active) {
+        if (mouse.active && !isMobile) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            this.x -= dx * 0.015;
-            this.y -= dy * 0.015;
+          if (dist < 120) {
+            this.x -= dx * 0.01;
+            this.y -= dy * 0.01;
           }
         }
       }
@@ -57,7 +57,7 @@ const NexusBackground = () => {
       draw(ctx: CanvasRenderingContext2D) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(47, 128, 237, 0.4)';
+        ctx.fillStyle = 'rgba(47, 128, 237, 0.3)';
         ctx.fill();
       }
     }
@@ -79,6 +79,9 @@ const NexusBackground = () => {
         p1.update(canvas.width, canvas.height);
         p1.draw(ctx);
 
+        // Skip heavy connection logic on mobile
+        if (isMobile) continue;
+
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p1.x - p2.x;
@@ -90,8 +93,8 @@ const NexusBackground = () => {
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
             const opacity = 1 - dist / connectionDistance;
-            ctx.strokeStyle = `rgba(47, 128, 237, ${opacity * 0.3})`;
-            ctx.lineWidth = 1.2;
+            ctx.strokeStyle = `rgba(47, 128, 237, ${opacity * 0.2})`;
+            ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
