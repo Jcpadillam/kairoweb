@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
 import { translations } from '../i18n/translations';
 
 type Language = 'ES' | 'EN' | 'PT';

@@ -451,8 +451,9 @@ export const translations = {
           { title: 'Persuasive UX', desc: 'Interfaces psychologically designed to convert.' },
           { title: 'Cloud Infrastructure', desc: 'Infinite scalability with AWS and Vercel.' }
         ]
-      },
-      ecommerce: {
+      }
+    },
+    ecommerce: {
         badge: 'Shopify Plus & WooCommerce',
         title: 'High-Performance Ecommerce',
         desc: 'We don\'t just build stores; we build scalable digital assets. Enterprise-level specialists in Shopify and WooCommerce ecosystems.',
@@ -480,7 +481,6 @@ export const translations = {
             { title: 'Cloud Architecture', desc: 'Infrastructure ready for massive traffic spikes.' }
           ]
         }
-      },
     },
     apps: {
       badge: 'Native-First Mobile Engineering',
