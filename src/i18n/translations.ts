@@ -817,7 +817,6 @@ export const translations = {
     hero: {
       badge: 'Agência Digital Premium',
       auditBadge: 'Auditoria Estratégica Grátis',
-      title: 'Dominamos o código. Escalamos o seu negócio.',
       titleLine1: 'Dominamos o código.',
       titleLine2: 'Escalamos o seu negócio.',
       description: 'Desenvolvemos ecossistemas digitais de alto desempenho. eCommerce, integrações e suporte especializado projetados para escalar sem atritos.',
@@ -1089,6 +1088,8 @@ export const translations = {
       title: 'Nossos trabalhos recentes.',
       subtitle: 'Projetos reais onde aplicamos nossa engenharia para transformar ideias em ativos digitais de alto desempenho.',
       cta: 'Ver Portfólio Completo',
+      viewProject: 'Ver detalhe do caso',
+      role: 'Liderança Técnica',
       projects: [
         {
           title: 'Loja Online - Moda',
