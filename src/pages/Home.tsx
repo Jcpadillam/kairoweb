@@ -10,7 +10,7 @@ import AgileProcess from "../components/AgileProcess";
 import LeadMagnet from "../components/LeadMagnet";
 import SEO from "../components/SEO";
 import FinalCTA from "../components/FinalCTA";
-import { motion } from 'framer-motion';
+
 
 // No extras for performance
 export default function Home() {
