@@ -13,10 +13,10 @@ export default function HumanFactor() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#2F80ED] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-100/50">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-md mb-6 border border-blue-100/50 cursor-default">
                             {t.humanFactor.badge}
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
+                        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tighter">
                             {t.humanFactor.title} <br /> <span className="text-[#2F80ED]">{t.humanFactor.titleHighlight}</span>.
                         </h2>
                         <p className="text-slate-600 text-lg mb-8 leading-relaxed max-w-xl">

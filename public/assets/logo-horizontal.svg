@@ -1,0 +1,16 @@
+<svg width="800" height="240" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon on left -->
+  <circle cx="120" cy="120" r="70" stroke="#2F80ED" stroke-width="22"/>
+  <circle cx="120" cy="120" r="25" fill="#2F80ED"/>
+  
+  <!-- Text on right -->
+  <text 
+    x="220" 
+    y="145" 
+    fill="currentColor" 
+    font-family="Inter, Montserrat, system-ui, sans-serif" 
+    font-size="100" 
+    font-weight="800" 
+    letter-spacing="0.05em"
+  >KAIRO</text>
+</svg>

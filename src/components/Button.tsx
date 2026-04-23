@@ -5,7 +5,8 @@ interface ButtonProps {
   children: React.ReactNode;
   href?: string;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  type?: 'button' | 'submit' | 'reset';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'transparent';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   disabled?: boolean;
@@ -17,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   href,
   onClick,
+  type = 'button',
   variant = 'primary',
   size = 'md',
   className = '',
@@ -43,6 +45,11 @@ const Button: React.FC<ButtonProps> = ({
       hover:shadow-white/10 hover:shadow-2xl
       before:bg-gradient-to-r before:from-white/10 before:to-white/5
     `,
+    transparent: `
+      bg-transparent border-transparent shadow-none
+      hover:shadow-none
+      before:hidden
+    `,
   };
 
   const sizes = {
@@ -65,19 +72,24 @@ const Button: React.FC<ButtonProps> = ({
     ${className}
   `;
 
-  const motionProps = {
-    whileHover: disabled ? {} : {
+  const motionVariants = {
+    rest: {
+      scale: 1,
+      y: 0,
+    },
+    hover: disabled ? {} : {
       scale: 1.02,
       y: -2,
     },
-    whileTap: disabled ? {} : {
+    tap: disabled ? {} : {
       scale: 0.98,
     },
-    transition: {
-      type: 'spring' as const,
-      stiffness: 400,
-      damping: 25,
-    },
+  };
+
+  const motionTransition = {
+    type: 'spring' as const,
+    stiffness: 400,
+    damping: 25,
   };
 
   const content = (
@@ -89,24 +101,38 @@ const Button: React.FC<ButtonProps> = ({
         whileHover={{ x: '100%' }}
         transition={{ duration: 0.8, ease: 'easeInOut' }}
       />
-      
+
       {/* Contenido del botón */}
       <span className="relative z-10 flex items-center justify-center gap-3">
         {icon && iconPosition === 'left' && (
           <motion.span
-            whileHover={{ x: -2 }}
-            transition={{ type: 'spring', stiffness: 400 }}
+            className="flex items-center justify-center transition-colors duration-300"
+            variants={{
+              hover: {
+                x: -5,
+                scale: 1.1,
+                rotate: -5
+              }
+            }}
+            transition={{ type: 'spring', stiffness: 300, damping: 15 }}
           >
             {icon}
           </motion.span>
         )}
-        
-        {children}
-        
+
+        <span className="relative">{children}</span>
+
         {icon && iconPosition === 'right' && (
           <motion.span
-            whileHover={{ x: 2 }}
-            transition={{ type: 'spring', stiffness: 400 }}
+            className="flex items-center justify-center transition-colors duration-300"
+            variants={{
+              hover: {
+                x: 5,
+                scale: 1.1,
+                rotate: 5
+              }
+            }}
+            transition={{ type: 'spring', stiffness: 300, damping: 15 }}
           >
             {icon}
           </motion.span>
@@ -146,7 +172,11 @@ const Button: React.FC<ButtonProps> = ({
       <motion.a
         href={href}
         className={baseClasses}
-        {...motionProps}
+        initial="rest"
+        whileHover="hover"
+        whileTap="tap"
+        variants={motionVariants}
+        transition={motionTransition}
       >
         {content}
       </motion.a>
@@ -155,10 +185,15 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
+      type={type}
       onClick={onClick}
       disabled={disabled}
       className={baseClasses}
-      {...motionProps}
+      initial="rest"
+      whileHover="hover"
+      whileTap="tap"
+      variants={motionVariants}
+      transition={motionTransition}
     >
       {content}
     </motion.button>

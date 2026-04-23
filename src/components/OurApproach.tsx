@@ -58,7 +58,7 @@ export default function OurApproach() {
   ];
 
   return (
-    <section id='nuestro-enfoque' className='bg-white py-24 px-6 relative overflow-hidden'>
+    <section id='approach' className='bg-white py-24 px-6 relative overflow-hidden'>
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-blue-50/30 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
@@ -68,7 +68,7 @@ export default function OurApproach() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#2F80ED] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-100/50"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-md mb-6 border border-blue-100/50 cursor-default"
           >
             {t.ourApproach.badge}
           </motion.div>
@@ -76,7 +76,7 @@ export default function OurApproach() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className='text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-6'
+            className='text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-[1] mb-6'
           >
             {t.ourApproach.titleLine1} <br className="hidden md:block" /> <span className='text-[#2F80ED]'>{t.ourApproach.titleLine2}</span>
           </motion.h2>
@@ -111,10 +111,10 @@ const TechCard = ({ title, description, icon: Icon, index, tag }: { title: strin
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
-      className='group bg-white p-8 rounded-3xl border border-slate-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 relative overflow-hidden'
+      className='group bg-white p-8 rounded-[2.5rem] border border-slate-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 relative overflow-hidden'
     >
-      <div className="absolute top-4 right-4 group-hover:bg-blue-50 transition-colors duration-500 px-3 py-1 rounded-full border border-slate-50 group-hover:border-blue-100">
-        <span className="text-[9px] font-bold text-slate-400 group-hover:text-[#2F80ED] uppercase tracking-tighter">
+      <div className="absolute top-4 right-4 group-hover:bg-blue-50 transition-colors duration-500 px-3 py-1 rounded-md border border-slate-50 group-hover:border-blue-100">
+        <span className="text-[9px] font-black text-slate-400 group-hover:text-[#2F80ED] uppercase tracking-widest">
           {tag}
         </span>
       </div>

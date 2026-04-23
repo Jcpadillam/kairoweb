@@ -1,11 +1,19 @@
 import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/#' + sectionId);
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -13,6 +21,11 @@ const Footer = () => {
   };
 
   const scrollToTop = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      window.scrollTo({ top: 0 });
+      return;
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -25,14 +38,15 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <motion.div
-              className="flex items-center space-x-2"
-              whileHover={{ scale: 1.05 }}
+              className="flex items-center"
+              whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-[#2F80ED] to-[#38BDF8] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">K</span>
-              </div>
-              <span className="text-xl font-bold text-slate-900">Kairo</span>
+              <img
+                src="/assets/logo-horizontal-dark.svg"
+                alt="Kairo Logo"
+                className="h-10 w-auto"
+              />
             </motion.div>
             <p className="text-slate-500 text-sm leading-relaxed">
               {t.footer.description}
@@ -63,7 +77,7 @@ const Footer = () => {
                 </svg>
               </motion.a>
               <motion.a
-                href="https://wa.me/573001234567"
+                href="https://wa.me/573243708900"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center text-slate-400 hover:text-[#25D366] hover:bg-emerald-50 transition-all duration-300 border border-slate-100"
@@ -83,12 +97,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {t.footer.services.items.map((item, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => scrollToSection('services')}
+                  <a
+                    href="#services"
+                    onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
                     className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
                   >
                     {item}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -100,17 +115,19 @@ const Footer = () => {
             <ul className="space-y-2">
               {t.footer.company.items.map((item, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => {
+                  <a
+                    href={index === 0 ? '#approach' : index === 1 ? '#projects' : index === 2 ? '#audience' : '#'}
+                    onClick={(e) => {
+                      e.preventDefault();
                       if (index === 0) scrollToSection('approach');
                       if (index === 1) scrollToSection('projects');
                       if (index === 2) scrollToSection('audience');
-                      if (index === 3) scrollToSection('contact');
+                      if (index === 3) scrollToTop();
                     }}
                     className="text-slate-500 hover:text-[#2F80ED] transition-colors duration-300 text-sm"
                   >
                     {item}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -140,10 +157,10 @@ const Footer = () => {
                   </svg>
                 </div>
                 <a
-                  href="https://wa.me/573001234567"
+                  href="https://wa.me/573243708900"
                   className="text-slate-500 hover:text-slate-900 transition-colors duration-300 text-sm"
                 >
-                  +57 300 123 4567
+                  +57 324 370 8900
                 </a>
               </div>
               <div className="flex items-center space-x-3">
@@ -168,18 +185,20 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center space-x-6">
-            <button
-              onClick={() => scrollToTop()}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); scrollToTop(); }}
               className="text-slate-400 hover:text-slate-900 transition-colors duration-300 text-sm"
             >
               {t.footer.privacy}
-            </button>
-            <button
-              onClick={() => scrollToTop()}
+            </a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); scrollToTop(); }}
               className="text-slate-400 hover:text-slate-900 transition-colors duration-300 text-sm"
             >
               {t.footer.terms}
-            </button>
+            </a>
             <motion.button
               onClick={scrollToTop}
               className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-all duration-300"

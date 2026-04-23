@@ -56,10 +56,10 @@ const ServiceCard = ({ title, description, icon: Icon, index, tag, tech, techLab
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
-      className='group bg-white p-8 rounded-3xl border border-slate-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 relative overflow-hidden flex flex-col h-full'
+      className='group bg-white p-8 rounded-[2.5rem] border border-slate-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 relative overflow-hidden flex flex-col h-full'
     >
-      <div className="absolute top-4 right-4 group-hover:bg-blue-50 transition-colors duration-500 px-3 py-1 rounded-full border border-slate-50 group-hover:border-blue-100">
-        <span className="text-[9px] font-bold text-slate-400 group-hover:text-[#2F80ED] uppercase tracking-tighter">
+      <div className="absolute top-4 right-4 group-hover:bg-blue-50/50 transition-colors duration-500 px-3 py-1 rounded-md border border-slate-50 group-hover:border-blue-100/50 cursor-default">
+        <span className="text-[9px] font-black text-slate-400 group-hover:text-[#2F80ED] uppercase tracking-widest">
           {tag}
         </span>
       </div>
@@ -70,10 +70,10 @@ const ServiceCard = ({ title, description, icon: Icon, index, tag, tech, techLab
         </IconWrapper>
       </div>
 
-      <h3 className='text-xl font-bold text-slate-900 mb-3 group-hover:text-[#2F80ED] transition-colors'>
+      <h3 className='text-xl font-black text-slate-900 mb-3 group-hover:text-[#2F80ED] transition-colors tracking-tighter'>
         {title}
       </h3>
-      <p className='text-slate-600 leading-relaxed text-sm md:text-base mb-6 flex-grow'>
+      <p className='text-slate-600 leading-relaxed text-lg mb-6 flex-grow'>
         {description}
       </p>
 
@@ -120,9 +120,17 @@ export default function FeaturedServices() {
   ];
 
   return (
-    <section id='soluciones' className='bg-transparent py-24 px-6 relative overflow-hidden'>
+    <section id='services' className='bg-transparent py-24 px-6 relative overflow-hidden'>
       {/* Background Decor */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-50/20 rounded-full blur-[120px] translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none select-none">
+        <svg width="100%" height="100%" className="text-white">
+          <pattern id="grid-services" width="80" height="80" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="1" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid-services)" />
+        </svg>
+      </div>
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-500/10 rounded-full blur-[120px] translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
       <div className='mx-auto max-w-7xl relative z-10'>
         <div className='text-center mb-20'>
@@ -130,7 +138,7 @@ export default function FeaturedServices() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#2F80ED] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-100/50"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-md mb-6 border border-white/20 cursor-default"
           >
             {t.services.badge}
           </motion.div>
@@ -138,7 +146,7 @@ export default function FeaturedServices() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className='text-3xl md:text-6xl font-black text-white tracking-tight leading-[1] mb-6'
+            className='text-4xl md:text-5xl font-black text-white tracking-tighter leading-[1.1] mb-6'
           >
             {t.services.title.split(' ').slice(0, 3).join(' ')} <br className="hidden md:block" /> {t.services.title.split(' ').slice(3).join(' ')}
           </motion.h2>

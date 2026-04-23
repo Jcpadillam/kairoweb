@@ -26,7 +26,7 @@ export default function MiniCloser() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <Button
-                            href="https://wa.me/tu-numero" // Placeholder
+                            href="https://wa.me/573243708900"
                             variant="ghost"
                             size="lg"
                             className="!bg-white !text-[#2F80ED] !border-none px-12 py-6 rounded-2xl shadow-2xl hover:scale-105 transition-all text-lg font-bold"

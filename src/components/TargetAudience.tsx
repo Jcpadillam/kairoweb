@@ -63,7 +63,7 @@ const TechCard = ({ title, description, icon: Icon, index }: { title: string, de
           <Icon className="w-8 h-8 text-[#2F80ED]" />
         </IconWrapper>
       </div>
-      <h3 className='text-xl font-bold text-slate-900 mb-3 group-hover:text-[#2F80ED] transition-colors'>
+      <h3 className='text-xl font-black text-slate-900 mb-3 group-hover:text-[#2F80ED] transition-colors tracking-tight'>
         {title}
       </h3>
       <p className='text-slate-600 leading-relaxed text-sm md:text-base'>
@@ -100,7 +100,7 @@ export default function TargetAudience() {
   ];
 
   return (
-    <section id='para-quien' className='bg-transparent py-24 px-6 relative overflow-hidden'>
+    <section id='audience' className='bg-transparent py-24 px-6 relative overflow-hidden'>
       {/* Background Decor (Soft Nexus Orbs) */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-50/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
@@ -111,19 +111,15 @@ export default function TargetAudience() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#2F80ED] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6 border border-blue-100/50"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-md mb-6 border border-blue-100/50 cursor-default"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-            </span>
             {t.targetAudience.badge}
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className='text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-6'
+            className='text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-[1] mb-6'
           >
             {t.targetAudience.title} <span className='text-[#2F80ED]'>{t.targetAudience.titleHighlight}</span> <br className="hidden md:block" /> {t.targetAudience.titleSuffix}
           </motion.h2>
@@ -132,7 +128,7 @@ export default function TargetAudience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className='mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed'
+            className='mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium'
           >
             {t.targetAudience.subtitle}
           </motion.p>
@@ -140,7 +136,9 @@ export default function TargetAudience() {
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           {cards.map((card, index) => (
-            <TechCard key={index} {...card} index={index} />
+            <div key={index} className="rounded-[2.5rem] overflow-hidden">
+              <TechCard {...card} index={index} />
+            </div>
           ))}
         </div>
 
@@ -178,7 +176,7 @@ export default function TargetAudience() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Button
-                href='#soluciones'
+                href='#agenda'
                 variant='ghost'
                 size='lg'
                 className="!bg-white !text-[#2F80ED] !border-none px-12 py-6 rounded-2xl shadow-xl hover:!bg-blue-50 transition-all active:scale-95"

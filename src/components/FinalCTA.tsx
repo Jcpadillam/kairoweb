@@ -49,7 +49,6 @@ const CustomSelect = ({
   const selectRef = useRef<HTMLDivElement>(null);
   const selectedOption = options.find(option => option.value === value);
 
-  // Cerrar el select cuando se haga clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
@@ -70,7 +69,7 @@ const CustomSelect = ({
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-left focus:outline-none focus:ring-2 focus:ring-[#2F80ED] focus:border-transparent transition-all duration-300 flex items-center justify-between h-12"
       >
-        <span className={selectedOption?.value ? 'text-slate-900' : 'text-slate-400'}>
+        <span className={selectedOption?.value ? 'text-slate-900 font-medium' : 'text-slate-400'}>
           {selectedOption?.value ? selectedOption.label : (placeholder || 'Selecciona una opción')}
         </span>
         <motion.svg
@@ -94,7 +93,7 @@ const CustomSelect = ({
           pointerEvents: isOpen ? 'auto' : 'none'
         }}
         transition={{ duration: 0.2 }}
-        className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 max-h-60 overflow-y-auto"
+        className="absolute bottom-full mb-2 left-0 right-0 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 max-h-60 overflow-y-auto"
       >
         {options.map((option) => (
           <button
@@ -104,7 +103,7 @@ const CustomSelect = ({
               onChange(option.value);
               setIsOpen(false);
             }}
-            className={`w-full px-4 py-3 text-left hover:bg-slate-50 transition-colors duration-200 flex items-center ${option.value === '' ? 'text-slate-300 cursor-default hover:bg-transparent' : 'text-slate-600'
+            className={`w-full px-4 py-3 text-left hover:bg-slate-50 transition-colors duration-200 flex items-center text-sm font-medium ${option.value === '' ? 'text-slate-300 cursor-default hover:bg-transparent' : 'text-slate-600'
               } ${option.value === value ? 'bg-blue-50 text-[#2F80ED]' : ''}`}
             disabled={option.value === ''}
           >
@@ -115,13 +114,6 @@ const CustomSelect = ({
     </div>
   );
 };
-
-// Iconos personalizados
-const CalendarIcon = () => (
-  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-  </svg>
-);
 
 const WhatsAppIcon = () => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -139,306 +131,198 @@ function FinalCTA() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showForm, setShowForm] = useState(true);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simular envío del formulario
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'contact', ...formData }),
+      });
 
-    console.log('Formulario enviado:', formData);
-    setIsSubmitting(false);
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      project: '',
-      message: ''
-    });
+      if (response.ok) {
+        setFormData({ name: '', email: '', phone: '', project: '', message: '' });
+        alert('¡Solicitud enviada! Un arquitecto de soluciones te contactará pronto.');
+      } else {
+        alert('Error al enviar la solicitud. Por favor intenta de nuevo.');
+      }
+    } catch (error) {
+      alert('Error de conexión. Revisa tu internet.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section id="agenda" className="bg-white py-24 px-6 overflow-hidden relative">
-      {/* Fondo con efectos suaves */}
-      <div className='absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-white' />
-
-      {/* Partículas de fondo */}
-      <div className='absolute inset-0 overflow-hidden'>
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className='absolute w-1 h-1 bg-[#2F80ED] rounded-full opacity-30'
-            initial={{
-              x: `${Math.random() * 100}%`,
-              y: `${Math.random() * 100}%`,
-              scale: 0,
-            }}
-            animate={{
-              scale: [0, 1, 0],
-              opacity: [0, 0.6, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+    <section id="agenda" className="bg-white py-32 px-6 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-[0.03] pointer-events-none select-none">
+        <svg width="100%" height="100%" className="text-slate-900">
+          <pattern id="grid-cta" width="80" height="80" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="1" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid-cta)" />
+        </svg>
       </div>
 
-      <div className="mx-auto max-w-6xl relative z-10">
-        <motion.div
-          className="text-center"
-          initial='hidden'
-          whileInView='show'
-          viewport={{ once: true, margin: '-100px' }}
-          variants={staggerChildren}
-        >
-          <motion.h2
-            className="text-4xl font-bold text-slate-900 sm:text-5xl"
-            variants={fadeUp}
-          >
-            ¿Tienes un{' '}
-            <span className='bg-gradient-to-r from-[#2F80ED] to-[#38BDF8] bg-clip-text text-transparent'>
-              desafío técnico
-            </span>
-            ?
-          </motion.h2>
-          <motion.p
-            className="mt-4 text-xl text-slate-600 max-w-3xl mx-auto"
-            variants={fadeUp}
-          >
-            Hablemos de tu proyecto. Te damos una evaluación honesta y un presupuesto claro.
-          </motion.p>
-        </motion.div>
+      <div className="mx-auto max-w-7xl relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-        {/* Grid de dos columnas */}
-        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start">
-
-          {/* Columna izquierda - Botones de acción rápida */}
+          {/* Left Column: Strategic Content */}
           <motion.div
-            className="space-y-8"
-            initial='hidden'
-            whileInView='show'
-            viewport={{ once: true, margin: '-100px' }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
             variants={staggerChildren}
+            className="flex flex-col gap-8"
           >
             <motion.div variants={fadeUp}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Contacto directo</h3>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-md border border-blue-100/50 cursor-default">
+                  Engineering Standards
+                </span>
+                <span className="px-3 py-1 bg-slate-50 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] rounded-md border border-slate-200 cursor-default">
+                  Latin America Trusted
+                </span>
+              </div>
 
-              <div className="space-y-4">
-                <Button
-                  href="https://wa.me/573001234567"
-                  variant="primary"
-                  size="lg"
-                  icon={<WhatsAppIcon />}
-                  iconPosition="left"
-                  className="w-full justify-center"
-                >
-                  Escribir por WhatsApp
-                </Button>
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-8">
+                ¿Tienes un <br />
+                <span className="bg-gradient-to-r from-[#2F80ED] to-[#38BDF8] bg-clip-text text-transparent">
+                  desafío técnico
+                </span>?
+              </h2>
 
-                <Button
-                  onClick={() => setShowForm(!showForm)}
-                  variant="secondary"
-                  size="lg"
-                  icon={<CalendarIcon />}
-                  iconPosition="left"
-                  className="w-full justify-center"
-                >
-                  {showForm ? 'Enviar formulario' : 'Mostrar formulario'}
-                </Button>
+              <p className="text-lg text-slate-500 font-medium leading-relaxed max-w-lg">
+                No somos solo desarrolladores; somos arquitectos de soluciones. Cuéntanos tu visión y te entregaremos una hoja de ruta técnica sólida.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-blue-200 transition-colors">
+                <div className="w-10 h-10 bg-white shadow-sm rounded-lg flex items-center justify-center text-blue-500 mb-4 font-black">01</div>
+                <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight mb-2">Auditoría Técnica</h4>
+                <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
+                  Evaluamos la viabilidad y escalabilidad de tu idea sin costo inicial.
+                </p>
+              </div>
+              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-blue-200 transition-colors">
+                <div className="w-10 h-10 bg-white shadow-sm rounded-lg flex items-center justify-center text-blue-500 mb-4 font-black">02</div>
+                <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight mb-2">Respuesta 24h</h4>
+                <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
+                  Recibe un diagnóstico honesto y un roadmap de ejecución en menos de un día.
+                </p>
               </div>
             </motion.div>
 
-            {/* Información adicional */}
-            <motion.div
-              className="bg-slate-50 border border-slate-100 rounded-2xl p-6 shadow-sm"
-              variants={fadeUp}
-            >
-              <h4 className="text-lg font-semibold text-slate-900 mb-4">¿Qué incluye?</h4>
-              <ul className="space-y-3 text-slate-600">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-[#2F80ED] rounded-full mr-3"></div>
-                  Diagnóstico técnico gratuito
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-[#2F80ED] rounded-full mr-3"></div>
-                  Presupuesto sin compromiso
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-[#2F80ED] rounded-full mr-3"></div>
-                  Consulta sobre tecnologías
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-[#2F80ED] rounded-full mr-3"></div>
-                  Plan de desarrollo personalizado
-                </li>
-              </ul>
+            <motion.div variants={fadeUp} className="mt-8">
+              <Button
+                href="https://wa.me/573243708900"
+                variant="primary"
+                size="lg"
+                icon={<WhatsAppIcon />}
+                iconPosition="left"
+                className="px-10 py-5 rounded-2xl shadow-xl shadow-blue-500/20 font-black uppercase tracking-widest text-sm"
+              >
+                Consultoría vía WhatsApp
+              </Button>
             </motion.div>
           </motion.div>
 
-          {/* Columna derecha - Formulario de contacto */}
+          {/* Right Column: High-Performance Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-[0_40px_100px_-20px_rgba(15,23,42,0.1)] relative"
           >
-            <motion.div
-              className={`bg-white border border-slate-200 rounded-3xl p-8 shadow-2xl transition-all duration-500 ${showForm ? 'opacity-100 scale-100' : 'opacity-50 scale-95 pointer-events-none'
-                }`}
-              animate={{
-                opacity: showForm ? 1 : 0.5,
-                scale: showForm ? 1 : 0.95,
-                pointerEvents: showForm ? 'auto' : 'none'
-              }}
-            >
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Cuéntanos tu proyecto</h3>
+            <div className="absolute -top-6 -right-6 lg:-right-12 w-24 h-24 bg-blue-500/10 rounded-full blur-3xl" />
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <h3 className="text-2xl font-black text-slate-900 mb-8 tracking-tighter">
+              Inicia tu proceso de ingeniería
+            </h3>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-slate-600 text-sm font-medium mb-2">
-                      Nombre *
-                    </label>
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Tu Nombre</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2F80ED] focus:border-transparent transition-all duration-300 h-12"
-                      placeholder="Tu nombre completo"
+                      placeholder="Ej: Juan Pérez"
+                      className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-900 font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all"
                     />
                   </div>
-
-                  <div>
-                    <label className="block text-slate-600 text-sm font-medium mb-2">
-                      Email *
-                    </label>
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">E-mail Corporativo</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2F80ED] focus:border-transparent transition-all duration-300 h-12"
-                      placeholder="tu@email.com"
+                      placeholder="tu@empresa.com"
+                      className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-900 font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-slate-600 text-sm font-medium mb-2">
-                      Teléfono
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2F80ED] focus:border-transparent transition-all duration-300 h-12"
-                      placeholder="+57 300 123 4567"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-slate-600 text-sm font-medium mb-2">
-                      Tipo de proyecto
-                    </label>
-                    <CustomSelect
-                      value={formData.project}
-                      onChange={(value) => setFormData(prev => ({ ...prev, project: value }))}
-                      options={projectOptions}
-                      placeholder="¿Qué necesitas desarrollar?"
-                    />
-                  </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Tipo de Solución</label>
+                  <CustomSelect
+                    value={formData.project}
+                    onChange={(value) => setFormData(prev => ({ ...prev, project: value }))}
+                    options={projectOptions}
+                  />
                 </div>
 
-                <div>
-                  <label className="block text-slate-600 text-sm font-medium mb-2">
-                    Cuéntanos sobre tu proyecto *
-                  </label>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Háblanos del desafío</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2F80ED] focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Describe tu idea, desafío técnico o lo que necesitas desarrollar..."
+                    placeholder="Describe los objetivos técnicos o problemas que buscas resolver..."
+                    className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-900 font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all resize-none"
                   />
                 </div>
+              </div>
 
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full relative inline-flex items-center justify-center rounded-2xl font-bold transition-all duration-500 transform-gpu will-change-transform overflow-hidden group px-8 py-4 text-base bg-gradient-to-r from-[#2F80ED] via-[#3B82F6] to-[#38BDF8] text-white shadow-2xl border border-blue-400/30 hover:shadow-blue-500/25 hover:shadow-2xl before:bg-gradient-to-r before:from-blue-400/20 before:to-cyan-400/20 before:absolute before:inset-0 before:rounded-2xl before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                  whileHover={!isSubmitting ? {
-                    scale: 1.02,
-                    y: -2,
-                  } : {}}
-                  whileTap={!isSubmitting ? {
-                    scale: 0.98,
-                  } : {}}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 400,
-                    damping: 25,
-                  }}
-                >
-                  {/* Efecto de glow animado */}
-                  <motion.div
-                    className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    initial={{ x: '-100%' }}
-                    whileHover={!isSubmitting ? { x: '100%' } : {}}
-                    transition={{ duration: 0.8, ease: 'easeInOut' }}
-                  />
-
-                  <span className="relative z-10">
-                    {isSubmitting ? 'Enviando...' : 'Enviar solicitud'}
-                  </span>
-
-                  {/* Spinner de carga */}
-                  {isSubmitting && (
-                    <motion.div
-                      className="ml-3 w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    />
-                  )}
-                </motion.button>
-              </form>
-            </motion.div>
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                className="w-full py-5 bg-slate-900 text-white rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl hover:bg-slate-800 disabled:opacity-50 transition-all flex items-center justify-center gap-3"
+              >
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Validando...
+                  </>
+                ) : 'Enviar Solicitud de Consultoría'}
+              </motion.button>
+            </form>
           </motion.div>
         </div>
-
-        {/* Información de contacto */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          <p className="text-slate-400 text-sm">
-            Resolvemos dudas técnicas y damos presupuesto sin compromiso • Respuesta en menos de 24 horas
-          </p>
-        </motion.div>
       </div>
     </section>
   );

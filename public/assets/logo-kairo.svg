@@ -1,0 +1,18 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Kairo Icon -->
+  <circle cx="250" cy="180" r="100" stroke="#2F80ED" stroke-width="28"/>
+  <circle cx="250" cy="180" r="35" fill="#2F80ED"/>
+  
+  <!-- Kairo Text -->
+  <!-- Note: Using a geometric sans-serif stack for best recreation -->
+  <text 
+    x="250" 
+    y="420" 
+    fill="currentColor" 
+    font-family="Inter, Montserrat, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+    font-size="115" 
+    font-weight="900" 
+    text-anchor="middle" 
+    letter-spacing="0.02em"
+  >KAIRO</text>
+</svg>

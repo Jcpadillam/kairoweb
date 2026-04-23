@@ -1,22 +1,167 @@
 export const translations = {
   ES: {
-    hero: {
-      badge: 'Agencia Digital Premium',
-      auditBadge: 'Auditoría Estratégica Gratis',
-      title: 'Dominamos el código. Escalamos tu negocio.', // Deprecated in favor of split lines
-      titleLine1: 'Dominamos el código.',
-      titleLine2: 'Escalamos tu negocio.',
-      description: 'Desarrollamos ecosistemas digitales de alto rendimiento. eCommerce, integraciones y soporte experto diseñado para escalar sin fricciones.',
-      ctaPrimary: 'Agenda una Auditoría',
-      ctaSecondary: 'Ver Nuestros Servicios',
-      stat1: '+35% Conversión',
-      stat2: '99.9% Uptime',
-      features: ['Ingeniería eCommerce', 'Arquitectura API', 'Ecosistemas 24/7'],
-      footerNote: 'Propuesta técnica en 24h • Primera sesión estratégica sin costo'
+    notFound: {
+      badge: 'Error 404',
+      title: 'Conexión táctica',
+      titleHighlight: 'no establecida',
+      desc: 'Parece que la ruta técnica que buscas no existe o ha sido movida a un nuevo despliegue.',
+      cta: 'Volver a la base',
+      secondary: 'Reportar incidencia'
     },
+    hero: {
+      badge: 'Tu Socio Tecnológico de Élite',
+      auditBadge: 'Consultoría Estratégica Gratis',
+      titleLine1: 'Lideramos tu tecnología.',
+      titleLine2: 'Escalamos tu visión.',
+      description: 'Más que una agencia, somos tu brazo técnico de élite. Diseñamos, desarrollamos y escalamos ecosistemas digitales para empresas que no aceptan menos que la perfección.',
+      ctaPrimary: 'Inicia tu Proyecto',
+      ctaSecondary: 'Nuestras Soluciones',
+      stat1: 'Ingeniería de Autor',
+      stat2: 'Partnership 24/7',
+      features: ['Arquitectura de Élite', 'Escalabilidad Garantizada', 'Soporte Directo con Expertos'],
+      footerNote: 'Propuesta técnica en 24h • Habla directamente con un líder técnico'
+    },
+    webDev: {
+      badge: 'Desarrollo Premium',
+      title: 'Desarrollo Web',
+      desc: 'Sitios de alto impacto diseñados para escalar y convertir. Fusionamos estética premium con rendimiento técnico excepcional.',
+      ctaPrimary: 'Agendar Auditoría',
+      painPoints: {
+        badge: 'La Realidad Digital',
+        title: '¿Tu web actual te está costando',
+        titleHighlight: 'dinero?',
+        subtitle: 'La mayoría de sitios web son bonitos pero inútiles. Detectamos los 4 asesinos silenciosos de tu conversión.',
+        cards: [
+          { title: 'Lentitud Extrema', desc: '40% de usuarios abandonan si tarda +3s en cargar.' },
+          { title: 'Invisible en Google', desc: 'Sin SEO técnico, tu competencia se lleva todo el tráfico.' },
+          { title: 'No Convierte', desc: 'Tráfico sin ventas. Diseño que no guía al usuario a comprar.' },
+          { title: 'Inseguridad', desc: 'Tecnología obsoleta vulnerable a ataques y caídas.' }
+        ]
+      },
+      solutions: {
+        badge: 'Nuestra Solución',
+        title: 'Ingeniería que vende',
+        subtitle: 'No hacemos simples páginas web. Construimos activos digitales de alto rendimiento.',
+        cards: [
+          { title: 'Velocidad Relámpago', desc: 'Optimizamos Core Web Vitals para carga instantánea.' },
+          { title: 'SEO Nativo', desc: 'Arquitectura diseñada para rankear desde el día 1.' },
+          { title: 'UX Persuasivo', desc: 'Interfaces diseñadas psicológicamente para convertir.' },
+          { title: 'Infraestructura Cloud', desc: 'Escalabilidad infinita con AWS y Vercel.' }
+        ]
+      }
+    },
+    ecommerce: {
+      badge: 'Shopify Plus & WooCommerce',
+      title: 'Ecommerce de Alto Rendimiento',
+      desc: 'No solo creamos tiendas, construimos activos digitales diseñados para escalar. Especialistas en ecosistemas Shopify y WooCommerce de nivel enterprise.',
+      ctaPrimary: 'Escalar mis Ventas',
+      painPoints: {
+        badge: 'Fricción en el Checkout',
+        title: '¿Tu tienda pierde dinero',
+        titleHighlight: 'por cada segundo de carga?',
+        subtitle: 'El 70% de los carritos se abandonan. Eliminamos los cuellos de botella técnicos que frenan tu crecimiento en Shopify y WooCommerce.',
+        cards: [
+          { title: 'Checkout Lento', desc: 'Procesos de pago complejos que matan la conversión inmediata.' },
+          { title: 'UX Móvil Pobre', desc: 'Tiendas que no están optimizadas para el 80% del tráfico actual.' },
+          { title: 'Sin Automatización', desc: 'Perdiendo ventas por falta de flujos inteligentes de recuperación.' },
+          { title: 'Data Desconectada', desc: 'Inventarios y ERPs que no hablan entre sí, causando caos operativo.' }
+        ]
+      },
+      solutions: {
+        badge: 'Ingeniería de Conversión',
+        title: 'Ventas que no se detienen',
+        subtitle: 'Diseñamos arquitecturas de venta que maximizan el LTV y minimizan el costo de adquisición.',
+        cards: [
+          { title: 'Shopify / Woo Elite', desc: 'Personalización total sin sacrificar la estabilidad del core.' },
+          { title: 'Checkout en 1 Clic', desc: 'Sistemas de pago optimizados para reducir la fricción al mínimo.' },
+          { title: 'Marketing Automation', desc: 'Estrategias de retención y upselling integradas nativamente.' },
+          { title: 'Arquitectura Cloud', desc: 'Infraestructura preparada para picos de tráfico masivos.' }
+        ]
+      }
+    },
+    apps: {
+      badge: 'Ingeniería Móvil Native-First',
+      title: 'Arquitecturas Móviles de Élite',
+      desc: 'No solo creamos apps, diseñamos extensiones vitales de tu negocio. Rendimiento nativo, seguridad blindada y UX de nivel mundial.',
+      ctaPrimary: 'Descubrir Potencial Móvil',
+      painPoints: {
+        badge: 'El Reto del Rendimiento',
+        title: '¿Por qué las apps de hoy',
+        titleHighlight: 'fallan en retener?',
+        subtitle: 'El 80% de las apps se desinstalan por fricción técnica. Eliminamos los bugs y la lentitud que matan tu relación con el usuario.',
+        cards: [
+          { title: 'Latencia Crítica', desc: 'Interfaces pesadas y tiempos de carga que frustran al usuario moderno.' },
+          { title: 'UX Fragmentada', desc: 'Diseños que no se adaptan al comportamiento táctil natural de cada OS.' },
+          { title: 'Dependencia Cloud', desc: 'Apps que quedan inutilizables sin conexión, perdiendo datos críticos.' },
+          { title: 'Baja Retención', desc: 'Falta de estrategias técnicas de engagement y notificaciones inteligentes.' }
+        ]
+      },
+      solutions: {
+        badge: 'Ingeniería de Bolsillo',
+        title: 'Potencia sin compromiso',
+        subtitle: 'Desarrollamos experiencias robustas que tus usuarios elegirán abrir todos los días.',
+        cards: [
+          { title: 'React Native Elite', desc: 'Lo mejor de dos mundos: velocidad de desarrollo con rendimiento nativo.' },
+          { title: 'Arquitectura Offline', desc: 'Sincronización inteligente de datos que funciona en cualquier terreno.' },
+          { title: 'UX de Alta Fidelidad', desc: 'Animaciones a 60fps y micro-interacciones que deleitan al usuario.' },
+          { title: 'Seguridad Enterprise', desc: 'Cifrado de grado bancario y protección de datos en el edge.' }
+        ]
+      }
+    },
+    support: {
+        badge: 'Technical Guardian 24/7',
+        title: 'Mantenimiento Crítico & Evolutivo',
+        desc: 'Tu infraestructura digital blindada. No solo reaccionamos a problemas, prevemos el futuro de tu plataforma con ingeniería preventiva de élite.',
+        ctaPrimary: 'Blindar mi Infraestructura',
+        painPoints: {
+          badge: 'Riesgo Operativo Crítico',
+          title: '¿Tu plataforma resiste',
+          titleHighlight: 'un ataque o pico de tráfico?',
+          subtitle: 'El costo de la inactividad es la pérdida de reputación. Protegemos tu activo más valioso con rigor enterprise.',
+          cards: [
+            { title: 'Inestabilidad Crítica', desc: 'Servidores que colapsan en momentos de alta demanda o lanzamientos.' },
+            { title: 'Vulnerabilidad Total', desc: 'Sistemas expuestos a inyecciones, malware y robo de propiedad intelectual.' },
+            { title: 'Deuda Técnica', desc: 'Plugins y dependencias obsoletas que rompen la funcionalidad del sitio.' },
+            { title: 'Caos de Datos', desc: 'Falta de protocolos de backup que garantizan la continuidad del negocio.' }
+          ]
+        },
+        solutions: {
+          badge: 'Blindaje Digital',
+          title: 'Tu Guardián de Infraestructura',
+          subtitle: 'Arquitectura de soporte proactiva que garantiza el 99.9% de uptime y seguridad total.',
+          cards: [
+            { title: 'Monitoreo Predictivo', desc: 'Detección proactiva mediante IA antes de que el usuario note el fallo.' },
+            { title: 'Ecosistema Cloud Seguro', desc: 'Respaldo georedundante y recuperación de desastres instantánea.' },
+            { title: 'Hardening de Código', desc: 'Blindaje de capas de aplicación contra amenazas de día cero.' },
+            { title: 'Evolución Continua', desc: 'Optimización de performance y actualizaciones sin downtime.' }
+          ]
+        }
+      },
+      about: {
+        badge: 'Nuestra Esencia',
+        title: 'Ingeniería con Propósito',
+        desc: 'Nacimos para cerrar la brecha entre la estrategia de negocio y la ejecución técnica de élite.',
+        story: {
+          title: 'Nuestra Historia',
+          desc: 'Desde Barranquilla para el mundo. Kairo comenzó con una convicción: la tecnología no debe ser una caja negra, sino un motor de crecimiento transparente y medible.'
+        },
+        values: {
+          title: 'Nuestros Valores',
+          items: [
+            { title: 'Rigor Técnico', desc: 'No aceptamos "funciona por ahora". Construimos para escalar.' },
+            { title: 'Transparencia Radical', desc: 'Sin tecnicismos para ocultar errores. Hablamos tu idioma.' },
+            { title: 'Resultados Reales', desc: 'Nos medimos por tu ROI, no por líneas de código.' }
+          ]
+        },
+        team: {
+          title: 'El Equipo',
+          desc: 'Ingenieros, diseñadores y estrategas obsesionados con la calidad.'
+        }
+      },
     header: {
       menu: {
         home: 'Inicio',
+        about: 'Nosotros',
         services: 'Servicios',
         portfolio: 'Portafolio',
         blog: 'Blog',
@@ -30,13 +175,14 @@ export const translations = {
       },
       digitalAgency: 'Agencia Digital',
       language: 'Idioma',
-      start: 'Empezar',
-      whatsapp: 'Hablar por WhatsApp'
+      start: 'Auditoría Gratis',
+      whatsapp: 'Hablar por WhatsApp',
+      whatsappShort: 'WhatsApp'
     },
     services: {
-      badge: 'Servicios Enterprise',
-      title: 'Propulsamos tu negocio con Ingeniería de IA.',
-      subtitle: 'No solo construimos software; creamos activos estratégicos que utilizan IA para automatizar el crecimiento y maximizar la rentabilidad de tu empresa.',
+      badge: 'Soluciones Partner',
+      title: 'Tecnología para liderar tu industria.',
+      subtitle: 'No solo escribimos código; entregamos soluciones de ingeniería que resuelven problemas de negocio complejos y aseguran tu futuro digital.',
       techStackLabel: 'Tecnologías Hub',
       items: [
         {
@@ -88,34 +234,56 @@ export const translations = {
       trustedBy: 'Confiado por líderes en:',
       trustedSectors: ['Fintech', 'Ecommerce', 'Logística', 'SaaS'],
       ctaBox: {
-        title: 'Deja de acumular deuda técnica',
+        title: 'Confía tu visión a expertos',
         title2: 'y empieza a',
-        titleHighlight: 'escalar de verdad',
-        desc: 'Analizamos tu caso sin costo y te entregamos una propuesta de valor en menos de 24 horas.',
-        button: 'Solicitar mi Auditoría Gratis',
-        note1: 'Respuesta en menos de 24h',
-        note2: 'Sin compromiso • 100% Confidencial'
+        titleHighlight: 'construir el futuro',
+        desc: 'Evaluamos tu proyecto sin costo y diseñamos una hoja de ruta técnica personalizada para tus objetivos de negocio.',
+        button: 'Agendar Sesión de Estrategia',
+        note1: 'Consultoría directa con especialistas',
+        note2: 'Confidencialidad Garantizada • Propuesta en 24h'
       }
     },
     process: {
-      badge: 'Nuestra Metodología',
-      titleSingle: 'Procesos',
-      titleHighlight: 'ágiles y flexibles',
-      desc: 'Nos enfocamos en el cumplimiento de nuestra promesa de tiempos de entrega y alta calidad, utilizando metodologías probadas de 6 pasos.',
+      badge: 'Metodología Kairo',
+      titleSingle: 'Cómo llevamos tu idea',
+      titleHighlight: 'al siguiente nivel',
+      desc: 'Seguimos un proceso estructurado en 3 fases para asegurar que cada proyecto nazca robusto y escale sin límites.',
+      phases: [
+        { title: 'Fase 1: Estrategia', items: ['Diagnóstico', 'Planificación'] },
+        { title: 'Fase 2: Ejecución', items: ['Arquitectura', 'Desarrollo'] },
+        { title: 'Fase 3: Lanzamiento', items: ['Integración', 'Optimización'] }
+      ],
       steps: [
-        { title: "1. Diagnóstico Accesible", desc: "Evaluamos tu estado actual para proponer soluciones tecnológicas alcanzables y rentables." },
-        { title: "2. Estrategia Escalable", desc: "Diseñamos una arquitectura técnica lista para crecer junto con tu negocio." },
-        { title: "3. Diseño de Conversión", desc: "Creamos interfaces optimizadas (UI/UX) enfocadas en vender y retener usuarios." },
-        { title: "4. Desarrollo Robusto", desc: "Codificamos con estándares de élite para garantizar seguridad y alto rendimiento." },
-        { title: "5. Integración Total", desc: "Conectamos tu web con CRMs, ERPs y pasarelas para unificar tu operación." },
-        { title: "6. Soporte Cercano", desc: "Acompañamiento post-lanzamiento para evolucionar tu plataforma continuamente." }
+        { title: "Diagnóstico Inicial", desc: "Analizamos tu visión y tus necesidades técnicas para definir el mejor camino a seguir." },
+        { title: "Plan de Escalabilidad", desc: "Diseñamos una hoja de ruta clara para que tu plataforma crezca junto a tu negocio." },
+        { title: "Arquitectura de Élite", desc: "Construimos una base técnica sólida, segura y preparada para el futuro." },
+        { title: "Desarrollo de Calidad", desc: "Programamos con los más altos estándares de ingeniería y rendimiento." },
+        { title: "Integración Digital", desc: "Conectamos tu ecosistema con las herramientas que ya usas en tu día a día." },
+        { title: "Evolución Continua", desc: "Te acompañamos después del lanzamiento para seguir mejorando y escalando." }
       ]
     },
+    portfolio: {
+      badge: 'Ingeniería de Impacto',
+      title: 'Proyectos que redefinen industrias',
+      subtitle: 'No solo construimos herramientas, creamos ventajas competitivas sostenibles a través del código de élite.',
+      categories: {
+        all: 'Todos',
+        ecommerce: 'E-commerce',
+        webapp: 'Web App',
+        mobileapp: 'Mobile App',
+        website: 'Website'
+      },
+      ctaTitle: '¿Tu proyecto es el siguiente?',
+      ctaSubtitle: 'Llevemos tu visión a la realidad con tecnología de vanguardia.',
+      ctaButton: 'Iniciar mi Proyecto'
+    },
     recentProjects: {
-      badge: 'Casos de Éxito',
-      title: 'Nuestros trabajos recientes.',
-      subtitle: 'Proyectos reales donde hemos aplicado nuestra ingeniería para transformar ideas en activos digitales de alto rendimiento.',
-      cta: 'Ver Portafolio Completo',
+      badge: 'Partnership en Acción',
+      title: 'Desafíos resueltos con éxito.',
+      subtitle: 'No solo construimos interfaces; resolvemos problemas complejos para empresas que buscan liderar su industria.',
+      cta: 'Ver todo el portafolio',
+      viewProject: 'Ver detalle del caso',
+      role: 'Liderazgo Técnico',
       projects: [
         {
           title: 'Tienda Online - Moda',
@@ -138,20 +306,20 @@ export const translations = {
       badge: 'Recurso Gratuito',
       title: 'Domina la IA en tu empresa',
       title2: 'antes que tu competencia.',
-      desc: 'Descarga nuestra guía exclusiva: " Roadmap de Transformación Digital 2025". Analizamos los 5 errores fatales que están costando millones a las empresas LATAM.',
+      desc: 'Descarga nuestra guía exclusiva: " Roadmap de Transformación Digital 2026". Analizamos los 5 errores fatales que están costando millones a las empresas LATAM.',
       placeholder: 'Tu email principal',
       button: 'Obtener Guía Gratis',
       spam: '* No enviamos spam. Solo valor técnico puro.'
     },
     miniCloser: {
-      badge: 'Roadmap 2025',
-      badge2: 'Guía para Directivos',
-      title: '¿Listo para construir el',
-      title2: 'próximo nivel de tu negocio?',
-      desc: 'Hablemos de tus objetivos técnicos. Te entregamos un roadmap de ejecución sin costo inicial.',
-      button: 'Agendar Consultoría',
-      note: 'Respuesta hoy mismo',
-      availability: 'Cupos limitados por mes'
+      badge: 'Socio de Confianza',
+      badge2: 'Tu Próximo Nivel',
+      title: '¿Tienes una idea que necesita',
+      title2: 'una ejecución impecable?',
+      desc: 'Hablemos de tus metas. Transformamos tu visión en una plataforma escalable, segura y rentable.',
+      button: 'Hablemos de tu idea',
+      note: 'Respuesta en 24h',
+      availability: 'Cupos de partnership limitados'
     },
     humanFactor: {
       badge: 'Factor Humano',
@@ -235,23 +403,168 @@ export const translations = {
     }
   },
   EN: {
-    hero: {
-      badge: 'Premium Digital Agency',
-      auditBadge: 'Free Strategic Audit',
-      title: 'We master the code. We scale your business.',
-      titleLine1: 'We master the code.',
-      titleLine2: 'We scale your business.',
-      description: 'We develop high-performance digital ecosystems. eCommerce, integrations, and expert support designed for seamless scaling.',
-      ctaPrimary: 'Book an Audit',
-      ctaSecondary: 'View Our Services',
-      stat1: '+35% Conversion',
-      stat2: '99.9% Uptime',
-      features: ['eCommerce Engineering', 'API Architecture', '24/7 Ecosystems'],
-      footerNote: 'Technical proposal in 24h • First strategic session free'
+    notFound: {
+      badge: 'Error 404',
+      title: 'Tactical connection',
+      titleHighlight: 'not established',
+      desc: 'It seems the technical route you are looking for does not exist or has been moved to a new deployment.',
+      cta: 'Back to base',
+      secondary: 'Report incident'
     },
+    hero: {
+      badge: 'Your Elite Tech Partner',
+      auditBadge: 'Free Strategic Consultancy',
+      titleLine1: 'We lead your technology.',
+      titleLine2: 'We scale your vision.',
+      description: 'More than an agency, we are your elite technical arm. We design, develop, and scale digital ecosystems for companies that accept nothing less than perfection.',
+      ctaPrimary: 'Start Your Project',
+      ctaSecondary: 'Our Solutions',
+      stat1: 'Author Engineering',
+      stat2: '24/7 Partnership',
+      features: ['Elite Architecture', 'Guaranteed Scalability', 'Direct Expert Support'],
+      footerNote: 'Technical proposal in 24h • Speak directly with a tech lead'
+    },
+    webDev: {
+      badge: 'Premium Development',
+      title: 'Web Development',
+      desc: 'High-impact sites designed to scale and convert. We fuse premium aesthetics with exceptional technical performance.',
+      ctaPrimary: 'Book an Audit',
+      painPoints: {
+        badge: 'The Digital Reality',
+        title: 'Is your current site costing you',
+        titleHighlight: 'money?',
+        subtitle: 'Most websites are pretty but useless. We detect the 4 silent killers of your conversion.',
+        cards: [
+          { title: 'Extreme Slowness', desc: '40% of users leave if it takes +3s to load.' },
+          { title: 'Invisible on Google', desc: 'Without technical SEO, your competition takes all the traffic.' },
+          { title: 'No Conversion', desc: 'Traffic without sales. Design that doesn\'t lead to purchase.' },
+          { title: 'Insecurity', desc: 'Obsolete technology vulnerable to attacks and downtime.' }
+        ]
+      },
+      solutions: {
+        badge: 'Our Solution',
+        title: 'Engineering that sells',
+        subtitle: 'We don\'t make simple webpages. We build high-performance digital assets.',
+        cards: [
+          { title: 'Lightning Speed', desc: 'We optimize Core Web Vitals for instant loading.' },
+          { title: 'Native SEO', desc: 'Architecture designed to rank from day 1.' },
+          { title: 'Persuasive UX', desc: 'Interfaces psychologically designed to convert.' },
+          { title: 'Cloud Infrastructure', desc: 'Infinite scalability with AWS and Vercel.' }
+        ]
+      },
+      ecommerce: {
+        badge: 'Shopify Plus & WooCommerce',
+        title: 'High-Performance Ecommerce',
+        desc: 'We don\'t just build stores; we build scalable digital assets. Enterprise-level specialists in Shopify and WooCommerce ecosystems.',
+        ctaPrimary: 'Scale My Sales',
+        painPoints: {
+          badge: 'Checkout Friction',
+          title: 'Is your store losing money',
+          titleHighlight: 'with every second of load time?',
+          subtitle: '70% of carts are abandoned. we eliminate the technical bottlenecks that slow your growth on Shopify and WooCommerce.',
+          cards: [
+            { title: 'Slow Checkout', desc: 'Complex payment processes that kill immediate conversion.' },
+            { title: 'Poor Mobile UX', desc: 'Stores not optimized for 80% of current traffic.' },
+            { title: 'No Automation', desc: 'Losing sales due to lack of intelligent recovery flows.' },
+            { title: 'Disconnected Data', desc: 'Inventory and ERPs that don\'t talk to each other, causing chaos.' }
+          ]
+        },
+        solutions: {
+          badge: 'Conversion Engineering',
+          title: 'Unstoppable Sales',
+          subtitle: 'We design sales architectures that maximize LTV and minimize acquisition costs.',
+          cards: [
+            { title: 'Shopify / Woo Elite', desc: 'Full customization without sacrificing core stability.' },
+            { title: '1-Click Checkout', desc: 'Optimized payment systems to minimize friction.' },
+            { title: 'Marketing Automation', desc: 'Native retention and upselling strategies.' },
+            { title: 'Cloud Architecture', desc: 'Infrastructure ready for massive traffic spikes.' }
+          ]
+        }
+      },
+    },
+    apps: {
+      badge: 'Native-First Mobile Engineering',
+      title: 'Elite Mobile Architectures',
+      desc: 'We don\'t just build apps; we design vital extensions of your business. Native performance, bulletproof security, and world-class UX.',
+      ctaPrimary: 'Discover Mobile Potential',
+      painPoints: {
+        badge: 'The Performance Challenge',
+        title: 'Why do today\'s apps',
+        titleHighlight: 'fail to retain users?',
+        subtitle: '80% of apps are uninstalled due to technical friction. We eliminate the bugs and slowness that kill your user relationship.',
+        cards: [
+          { title: 'Critical Latency', desc: 'Heavy interfaces and load times that frustrate modern users.' },
+          { title: 'Fragmented UX', desc: 'Designs that don\'t adapt to the natural touch behavior of each OS.' },
+          { title: 'Cloud Dependency', desc: 'Apps that become unusable without connection, losing critical data.' },
+          { title: 'Low Retention', desc: 'Lack of technical engagement strategies and smart notifications.' }
+        ]
+      },
+      solutions: {
+        badge: 'Pocket-Sized Engineering',
+        title: 'Uncompromising Power',
+        subtitle: 'We develop robust experiences that your users will choose to open every day.',
+        cards: [
+          { title: 'React Native Elite', desc: 'The best of both worlds: development speed with native performance.' },
+          { title: 'Offline Architecture', desc: 'Smart data synchronization that works everywhere.' },
+          { title: 'High-Fidelity UX', desc: '60fps animations and micro-interactions that delight users.' },
+          { title: 'Enterprise Security', desc: 'Banking-grade encryption and edge-level data protection.' }
+        ]
+      }
+    },
+    support: {
+        badge: 'Technical Guardian 24/7',
+        title: 'Critical & Evolutionary Maintenance',
+        desc: 'Your digital infrastructure armored. We don\'t just react to problems; we foresee the future of your platform with elite preventive engineering.',
+        ctaPrimary: 'Armor My Infrastructure',
+        painPoints: {
+          badge: 'Critical Operational Risk',
+          title: 'Can your platform withstand',
+          titleHighlight: 'an attack or traffic spike?',
+          subtitle: 'The cost of downtime is a loss of reputation. We protect your most valuable asset with enterprise rigor.',
+          cards: [
+            { title: 'Critical Instability', desc: 'Servers that collapse during high demand or product launches.' },
+            { title: 'Total Vulnerability', desc: 'Systems exposed to injections, malware, and intellectual property theft.' },
+            { title: 'Technical Debt', desc: 'Obsolete plugins and dependencies that break site functionality.' },
+            { title: 'Data Chaos', desc: 'Lack of backup protocols to guarantee business continuity.' }
+          ]
+        },
+        solutions: {
+          badge: 'Digital Shielding',
+          title: 'Your Infrastructure Guardian',
+          subtitle: 'Proactive support architecture ensuring 99.9% uptime and total security.',
+          cards: [
+            { title: 'Predictive Monitoring', desc: 'Proactive AI detection before the user notices the failure.' },
+            { title: 'Secure Cloud Ecosystem', desc: 'Geo-redundant backup and instant disaster recovery.' },
+            { title: 'Code Hardening', desc: 'Armoring application layers against zero-day threats.' },
+            { title: 'Continuous Evolution', desc: 'Performance optimization and zero-downtime updates.' }
+          ]
+        }
+      },
+      about: {
+        badge: 'Our Essence',
+        title: 'Engineering with Purpose',
+        desc: 'We were born to bridge the gap between business strategy and elite technical execution.',
+        story: {
+          title: 'Our Story',
+          desc: 'From Barranquilla to the world. Kairo started with a conviction: technology should not be a black box, but a transparent and measurable growth engine.'
+        },
+        values: {
+          title: 'Our Values',
+          items: [
+            { title: 'Technical Rigor', desc: 'We don\'t accept "it works for now". We build to scale.' },
+            { title: 'Radical Transparency', desc: 'No technical jargon to hide errors. We speak your language.' },
+            { title: 'Real Results', desc: 'We measure ourselves by your ROI, not lines of code.' }
+          ]
+        },
+        team: {
+          title: 'The Team',
+          desc: 'Engineers, designers, and strategists obsessed with quality.'
+        }
+      },
     header: {
       menu: {
         home: 'Home',
+        about: 'About Us',
         services: 'Services',
         portfolio: 'Portfolio',
         blog: 'Blog',
@@ -265,8 +578,9 @@ export const translations = {
       },
       digitalAgency: 'Digital Agency',
       language: 'Language',
-      start: 'Get Started',
-      whatsapp: 'Chat on WhatsApp'
+      start: 'Free Audit',
+      whatsapp: 'Chat on WhatsApp',
+      whatsappShort: 'WhatsApp'
     },
     services: {
       badge: 'Enterprise Services',
@@ -333,24 +647,46 @@ export const translations = {
       }
     },
     process: {
-      badge: 'Our Methodology',
-      titleSingle: 'Agile and Flexible',
-      titleHighlight: 'Processes',
-      desc: 'We focus on delivering on our promise of time and high quality, using proven 6-step methodologies.',
+      badge: 'Kairo Methodology',
+      titleSingle: 'How we take your idea',
+      titleHighlight: 'to the next level',
+      desc: 'We follow a structured 3-phase process to ensure every project is born robust and scales without limits.',
+      phases: [
+        { title: 'Phase 1: Strategy', items: ['Diagnosis', 'Planning'] },
+        { title: 'Phase 2: Execution', items: ['Architecture', 'Development'] },
+        { title: 'Phase 3: Launch', items: ['Integration', 'Optimization'] }
+      ],
       steps: [
-        { title: "1. Accessible Diagnosis", desc: "We evaluate your current state to propose achievable and profitable tech solutions." },
-        { title: "2. Scalable Strategy", desc: "We design a technical architecture ready to grow alongside your business." },
-        { title: "3. Conversion Design", desc: "We create optimized interfaces (UI/UX) focused on selling and retaining users." },
-        { title: "4. Robust Development", desc: "We code with elite standards to guarantee security and high performance." },
-        { title: "5. Total Integration", desc: "We connect your web with CRMs, ERPs, and gateways to unify your operation." },
-        { title: "6. Close Support", desc: "Post-launch accompaniment to continuously evolve your platform." }
+        { title: "Initial Diagnosis", desc: "We analyze your vision and technical needs to define the best path forward." },
+        { title: "Scalability Plan", desc: "We design a clear roadmap so your platform grows alongside your business." },
+        { title: "Elite Architecture", desc: "We build a solid, secure, and future-proof technical foundation." },
+        { title: "Quality Development", desc: "We code with the highest engineering and performance standards." },
+        { title: "Digital Integration", desc: "We connect your ecosystem with the tools you already use daily." },
+        { title: "Continuous Evolution", desc: "We accompany you after launch to keep improving and scaling." }
       ]
     },
+    portfolio: {
+      badge: 'Impact Engineering',
+      title: 'Projects that Redefine Industries',
+      subtitle: 'We don\'t just build tools; we create sustainable competitive advantages through elite code.',
+      categories: {
+        all: 'All',
+        ecommerce: 'E-commerce',
+        webapp: 'Web App',
+        mobileapp: 'Mobile App',
+        website: 'Website'
+      },
+      ctaTitle: 'Is your project next?',
+      ctaSubtitle: 'Let’s bring your vision to reality with state-of-the-art technology.',
+      ctaButton: 'Start my Project'
+    },
     recentProjects: {
-      badge: 'Success Stories',
-      title: 'Our Recent Work.',
-      subtitle: 'Real projects where we applied our engineering to transform ideas into high-performance digital assets.',
-      cta: 'View Full Portfolio',
+      badge: 'Partnership in Action',
+      title: 'Successfully solved challenges.',
+      subtitle: 'We don\'t just build interfaces; we solve complex problems for companies looking to lead their industry.',
+      cta: 'View full portfolio',
+      viewProject: 'View case detail',
+      role: 'Technical Leadership',
       projects: [
         {
           title: 'Online Store - Fashion',
@@ -373,7 +709,7 @@ export const translations = {
       badge: 'Free Resource',
       title: 'Master AI in your company',
       title2: 'before your competition.',
-      desc: 'Download our exclusive guide: "Digital Transformation Roadmap 2025". We analyze 5 fatal errors costing millions to LATAM companies.',
+      desc: 'Download our exclusive guide: "Digital Transformation Roadmap 2026". We analyze 5 fatal errors costing millions to LATAM companies.',
       placeholder: 'Your main email',
       button: 'Get Free Guide',
       spam: '* We do not spam. Only pure technical value.'
@@ -470,6 +806,14 @@ export const translations = {
     }
   },
   PT: {
+    notFound: {
+      badge: 'Erro 404',
+      title: 'Conexão tática',
+      titleHighlight: 'não estabelecida',
+      desc: 'Parece que a rota técnica que você está procurando não existe ou foi movida para uma nova implantação.',
+      cta: 'Voltar à base',
+      secondary: 'Reportar incidência'
+    },
     hero: {
       badge: 'Agência Digital Premium',
       auditBadge: 'Auditoria Estratégica Grátis',
@@ -484,9 +828,147 @@ export const translations = {
       features: ['Engenharia de E-commerce', 'Arquitetura de API', 'Ecossistemas 24/7'],
       footerNote: 'Proposta técnica em 24h • Primeira sessão estratégica sem custo'
     },
+    webDev: {
+      badge: 'Desenvolvimento Premium',
+      title: 'Desenvolvimento Web',
+      desc: 'Sites de alto impacto projetados para escalar e converter. Fundimos estética premium com desempenho técnico excepcional.',
+      ctaPrimary: 'Agendar Auditoria',
+      painPoints: {
+        badge: 'A Realidade Digital',
+        title: 'Seu site atual está custando',
+        titleHighlight: 'dinheiro?',
+        subtitle: 'A maioria dos sites são bonitos, mas inúteis. Detectamos os 4 assassinos silenciosos da sua conversão.',
+        cards: [
+          { title: 'Lentidão Extrema', desc: '40% dos usuários abandonam se demorar +3s para carregar.' },
+          { title: 'Invisível no Google', desc: 'Sem SEO técnico, sua concorrência leva todo o tráfego.' },
+          { title: 'Não Converte', desc: 'Tráfego sem vendas. Design que não guia o usuário a comprar.' },
+          { title: 'Insegurança', desc: 'Tecnologia obsoleta vulnerável a ataques e quedas.' }
+        ]
+      },
+      solutions: {
+        badge: 'Nossa Solução',
+        title: 'Engenharia que vende',
+        subtitle: 'Não fazemos simples páginas web. Construímos ativos digitais de alto desempenho.',
+        cards: [
+          { title: 'Velocidade Relâmpago', desc: 'Otimizamos Core Web Vitals para carregamento instantâneo.' },
+          { title: 'SEO Nativo', desc: 'Arquitetura projetada para ranquear desde o dia 1.' },
+          { title: 'UX Persuasivo', desc: 'Interfaces projetadas psicologicamente para converter.' },
+          { title: 'Infraestrutura Cloud', desc: 'Escalabilidade infinita com AWS e Vercel.' }
+        ]
+      }
+    },
+    ecommerce: {
+      badge: 'Shopify Plus & WooCommerce',
+      title: 'Ecommerce de Alto Desempenho',
+      desc: 'Não criamos apenas lojas, construímos ativos digitais prontos para escalar. Especialistas em ecossistemas Shopify e WooCommerce nível enterprise.',
+      ctaPrimary: 'Escalar minhas Vendas',
+      painPoints: {
+        badge: 'Fricção no Checkout',
+        title: 'Sua loja está perdendo dinheiro',
+        titleHighlight: 'a cada segundo de carregamento?',
+        subtitle: '70% dos carrinhos são abandonados. Eliminamos os gargalos técnicos que travam seu crescimento no Shopify e WooCommerce.',
+        cards: [
+          { title: 'Checkout Lento', desc: 'Processos de pagamento complexos que matam a conversão imediata.' },
+          { title: 'UX Mobile Pobre', desc: 'Lojas não otimizadas para 80% do tráfego atual.' },
+          { title: 'Sem Automação', desc: 'Perdendo vendas por falta de fluxos inteligentes de recuperação.' },
+          { title: 'Dados Desconectados', desc: 'Estoques e ERPs que não se comunicam, causando caos operacional.' }
+        ]
+      },
+      solutions: {
+        badge: 'Engenharia de Conversão',
+        title: 'Vendas que não param',
+        subtitle: 'Projetamos arquiteturas de venda que maximizam o LTV e minimizam o custo de aquisição.',
+        cards: [
+          { title: 'Shopify / Woo Elite', desc: 'Personalização total sem sacrificar a estabilidade do core.' },
+          { title: 'Checkout em 1 Clique', desc: 'Sistemas de pagamento otimizados para reduzir a fricção ao mínimo.' },
+          { title: 'Marketing Automation', desc: 'Estratégias de retenção e upselling integradas nativamente.' },
+          { title: 'Arquitetura Cloud', desc: 'Infraestrutura preparada para picos de tráfego massivos.' }
+        ]
+      }
+    },
+    apps: {
+      badge: 'Engenharia Móvel Native-First',
+      title: 'Arquiteturas Móveis de Elite',
+      desc: 'Não criamos apenas apps, projetamos extensões vitais do seu negócio. Desempenho nativo, segurança blindada e UX de nível mundial.',
+      ctaPrimary: 'Descubrir Potencial Móvel',
+      painPoints: {
+        badge: 'O Desafio do Desempenho',
+        title: 'Por que os apps de hoje',
+        titleHighlight: 'falham em reter?',
+        subtitle: '80% dos apps são desinstalados por fricção técnica. Eliminamos os bugs e a lentidão que matam sua relação com o usuário.',
+        cards: [
+          { title: 'Latência Crítica', desc: 'Interfaces pesadas e tempos de carregamento que frustram o usuário moderno.' },
+          { title: 'UX Fragmentada', desc: 'Designs que não se adaptam ao comportamento tátil natural de cada OS.' },
+          { title: 'Dependência Cloud', desc: 'Apps que ficam inutilizáveis sem conexão, perdendo dados críticos.' },
+          { title: 'Baixa Retenção', desc: 'Falta de estratégias técnicas de engajamento e notificações inteligentes.' }
+        ]
+      },
+      solutions: {
+        badge: 'Engenharia de Bolso',
+        title: 'Potência sem compromisso',
+        subtitle: 'Desenvolvemos experiências robustas que seus usuários escolherão abrir todos os dias.',
+        cards: [
+          { title: 'React Native Elite', desc: 'O melhor de dois mundos: velocidade de desenvolvimento com desempenho nativo.' },
+          { title: 'Arquitetura Offline', desc: 'Sincronização inteligente de dados que funciona em qualquer lugar.' },
+          { title: 'UX de Alta Fidelidade', desc: 'Animações a 60fps e micro-interacciones que encantam o usuário.' },
+          { title: 'Segurança Enterprise', desc: 'Criptografia de grau bancário e proteção de dados no edge.' }
+        ]
+      }
+    },
+    support: {
+        badge: 'Technical Guardian 24/7',
+        title: 'Manutenção Crítica & Evolutiva',
+        desc: 'Sua infraestrutura digital blindada. Não apenas reagimos a problemas, prevemos o futuro da sua plataforma com engenharia preventiva de elite.',
+        ctaPrimary: 'Blindar minha Infraestrutura',
+        painPoints: {
+          badge: 'Risco Operacional Crítico',
+          title: 'Seu site cai quando',
+          titleHighlight: 'você mais vende?',
+          subtitle: 'O custo da inatividade é a perda de reputação. Protegemos seu ativo mais valioso com rigor enterprise.',
+          cards: [
+            { title: 'Instabilidade Crítica', desc: 'Servidores que colapsam em momentos de alta demanda ou lançamentos.' },
+            { title: 'Vulnerabilidade Total', desc: 'Sistemas expostos a injeções, malware e roubo de propriedade intelectual.' },
+            { title: 'Dívida Técnica', desc: 'Plugins e dependências obsoletas que quebram a funcionalidade do site.' },
+            { title: 'Caos de Dados', desc: 'Falta de protocolos de backup que garantem a continuidade do negócio.' }
+          ]
+        },
+        solutions: {
+          badge: 'Tranquilidade Técnica',
+          title: 'Seu Guardião de Infraestrutura',
+          subtitle: 'Arquitetura de suporte proativa que garante 99.9% de uptime e segurança total.',
+          cards: [
+            { title: 'Monitoramento 24/7', desc: 'Detectamos e corrigimos problemas antes dos seus clientes.' },
+            { title: 'Backup Diário', desc: 'Seus dados sempre seguros e recuperáveis na nuvem.' },
+            { title: 'Blindagem Total', desc: 'Patches de segurança contra ameaças de dia zero.' },
+            { title: 'Otimização Contínua', desc: 'Seu site mais rápido e eficiente a cada mês.' }
+          ]
+        }
+      },
+      about: {
+        badge: 'Nossa Essência',
+        title: 'Engenharia com Propósito',
+        desc: 'Nascemos para fechar a lacuna entre a estratégia de negócios e a execução técnica de elite.',
+        story: {
+          title: 'Nossa História',
+          desc: 'De Barranquilla para o mundo. A Kairo começou com uma convicção: a tecnologia não deve ser uma caixa preta, mas um motor de crescimento transparente e mensurável.'
+        },
+        values: {
+          title: 'Nossos Valores',
+          items: [
+            { title: 'Rigor Técnico', desc: 'Não aceitamos "funciona por enquanto". Construímos para escalar.' },
+            { title: 'Transparência Radical', desc: 'Sem tecnicismos para esconder erros. Falamos sua língua.' },
+            { title: 'Resultados Reais', desc: 'Nos medimos pelo seu ROI, não por linhas de código.' }
+          ]
+        },
+        team: {
+          title: 'A Equipe',
+          desc: 'Engenheiros, designers e estrategistas obcecados com a qualidade.'
+        }
+      },
     header: {
       menu: {
         home: 'Início',
+        about: 'Nós',
         services: 'Serviços',
         portfolio: 'Portfólio',
         blog: 'Blog',
@@ -500,8 +982,9 @@ export const translations = {
       },
       digitalAgency: 'Agência Digital',
       language: 'Idioma',
-      start: 'Começar',
-      whatsapp: 'Falar pelo WhatsApp'
+      start: 'Auditoria Grátis',
+      whatsapp: 'Falar pelo WhatsApp',
+      whatsappShort: 'WhatsApp'
     },
     services: {
       badge: 'Serviços Enterprise',
@@ -568,18 +1051,38 @@ export const translations = {
       }
     },
     process: {
-      badge: 'Nossa Metodologia',
-      titleSingle: 'Processos',
-      titleHighlight: 'ágeis e flexíveis',
-      desc: 'Nos concentramos no cumprimento da nossa promessa de prazos e alta qualidade, utilizando metodologias comprovadas de 6 etapas.',
+      badge: 'Metodologia Kairo',
+      titleSingle: 'Como levamos sua ideia',
+      titleHighlight: 'ao próximo nível',
+      desc: 'Seguimos um processo estruturado em 3 fases para garantir que cada projeto nasça robusto e escale sem limites.',
+      phases: [
+        { title: 'Fase 1: Estratégia', items: ['Diagnóstico', 'Planejamento'] },
+        { title: 'Fase 2: Execução', items: ['Arquitetura', 'Desenvolvimento'] },
+        { title: 'Fase 3: Lançamento', items: ['Integração', 'Otimização'] }
+      ],
       steps: [
-        { title: "1. Diagnóstico Acessível", desc: "Avaliamos seu estado atual para propor soluções tecnológicas alcançáveis e rentáveis." },
-        { title: "2. Estratégia Escalável", desc: "Projetamos uma arquitetura técnica pronta para crescer junto com seu negócio." },
-        { title: "3. Design de Conversão", desc: "Criamos interfaces otimizadas (UI/UX) focadas em vender e reter usuários." },
-        { title: "4. Desenvolvimento Robusto", desc: "Codificamos com padrões de elite para garantir segurança e alto desempenho." },
-        { title: "5. Integração Total", desc: "Conectamos seu site com CRMs, ERPs e gateways para unificar sua operação." },
-        { title: "6. Suporte Próximo", desc: "Acompanhamento pós-lançamento para evoluir sua plataforma continuamente." }
+        { title: "Diagnóstico Inicial", desc: "Analisamos sua visão e necessidades técnicas para definir o melhor caminho." },
+        { title: "Plano de Escalabilidade", desc: "Projetamos um roteiro claro para que sua plataforma cresça com seu negócio." },
+        { title: "Arquitetura de Elite", desc: "Construímos uma base técnica sólida, segura e preparada para o futuro." },
+        { title: "Desenvolvimento de Qualidade", desc: "Programamos com os mais altos padrões de engenharia e desempenho." },
+        { title: "Integração Digital", desc: "Conectamos seu ecossistema com as ferramentas que você já usa no dia a dia." },
+        { title: "Evolução Contínua", desc: "Acompanhamos você após o lançamento para continuar melhorando e escalando." }
       ]
+    },
+    portfolio: {
+      badge: 'Engenharia de Impacto',
+      title: 'Projetos que redefinem indústrias',
+      subtitle: 'Não criamos apenas ferramentas, construímos vantagens competitivas sustentáveis através de código de elite.',
+      categories: {
+        all: 'Todos',
+        ecommerce: 'E-commerce',
+        webapp: 'Web App',
+        mobileapp: 'Mobile App',
+        website: 'Website'
+      },
+      ctaTitle: 'O seu projeto é o próximo?',
+      ctaSubtitle: 'Vamos transformar sua visão em realidade com tecnologia de ponta.',
+      ctaButton: 'Iniciar meu Projeto'
     },
     recentProjects: {
       badge: 'Casos de Sucesso',

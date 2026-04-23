@@ -4,12 +4,12 @@ import OurApproach from "../components/OurApproach";
 import RecentProjects from "../components/RecentProjects";
 import TargetAudience from "../components/TargetAudience";
 import TrustSignals from "../components/TrustSignals";
-import MiniCloser from "../components/MiniCloser";
 import HumanFactor from "../components/HumanFactor";
 import StandardOfWork from "../components/StandardOfWork";
 import AgileProcess from "../components/AgileProcess";
 import LeadMagnet from "../components/LeadMagnet";
 import SEO from "../components/SEO";
+import FinalCTA from "../components/FinalCTA";
 import { motion } from 'framer-motion';
 
 // Componentes dummy para evitar errores si no existen
@@ -70,17 +70,17 @@ export default function Home() {
                 <div className="w-full">
                     <KairoHero />
 
-                    {/* Zona de Descanso: Background Gris Suave */}
-                    <div id="audience" className="bg-slate-50/50">
-                        <TargetAudience />
-                        <TrustSignals />
-                    </div>
-
                     <div id="approach">
                         <OurApproach />
                     </div>
 
                     <HumanFactor />
+
+                    {/* Zona de Descanso: Background Gris Suave */}
+                    <div id="audience" className="bg-slate-50/50">
+                        <TargetAudience />
+                        <TrustSignals />
+                    </div>
 
                     {/* Zona de Foco: Background Premium Oscuro/Gradiente */}
                     <div id="services" className="bg-slate-900 py-12 relative overflow-hidden">
@@ -101,7 +101,9 @@ export default function Home() {
 
                     <LeadMagnet />
 
-                    <MiniCloser />
+                    <FinalCTA />
+
+                    {/* MiniCloser removed in favor of FinalCTA for stricter conversion */}
 
                     {/* Contact section removed as requested */}
                 </div>

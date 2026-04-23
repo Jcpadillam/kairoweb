@@ -1,0 +1,101 @@
+[
+    {
+        "id": 0,
+        "title": "Famii Ecosystem",
+        "category": "E-commerce & Wellness",
+        "image": "/assets/projects/famii-mockup.png",
+        "description": "Ecosistema integral para el bienestar familiar, integrando un marketplace especializado, directorio de expertos y experiencias de conexión emocional.",
+        "tags": [
+            "WordPress",
+            "WooCommerce",
+            "PHP",
+            "Elementor",
+            "GSAP",
+            "WP Rocket",
+            "WPML"
+        ],
+        "isExperience": true,
+        "company": "Famii.co",
+        "role": "Fullstack Lead & Digital Architect"
+    },
+    {
+        "id": 1,
+        "title": "Nexus E-commerce",
+        "category": "E-commerce",
+        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1600",
+        "description": "Plataforma de comercio electrónico de alto rendimiento con IA para recomendaciones.",
+        "tags": [
+            "Next.js",
+            "Tailwind",
+            "Stripe"
+        ],
+        "isExperience": false
+    },
+    {
+        "id": 2,
+        "title": "Kairo Dashboard",
+        "category": "Web App",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
+        "description": "Sistema administrativo para gestión de flujos de trabajo en tiempo real.",
+        "tags": [
+            "React",
+            "D3.js",
+            "Firebase"
+        ],
+        "isExperience": false
+    },
+    {
+        "id": 3,
+        "title": "Swift Mobile",
+        "category": "Mobile App",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1600",
+        "description": "Experiencia móvil nativa para servicios de logística y última milla.",
+        "tags": [
+            "React Native",
+            "AWS"
+        ],
+        "isExperience": false
+    },
+    {
+        "id": 4,
+        "title": "Quantum Portal",
+        "category": "Website",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
+        "description": "Sitio corporativo con animaciones avanzadas y diseño minimalista.",
+        "tags": [
+            "Framer Motion",
+            "Vite"
+        ],
+        "isExperience": false
+    },
+    {
+        "id": 5,
+        "title": "Portal de Seguros Corporativo",
+        "category": "Web App",
+        "image": "https://images.unsplash.com/photo-1454165833767-1316b34460d9?auto=format&fit=crop&q=80&w=1600",
+        "description": "Desarrollo de plataforma de gestión de seguros a gran escala, optimizando procesos de suscripción.",
+        "tags": [
+            "Angular",
+            "Spring Boot",
+            "Oracle"
+        ],
+        "isExperience": true,
+        "company": "Tech Solutions Inc.",
+        "role": "Lead Frontend Developer"
+    },
+    {
+        "id": 6,
+        "title": "App Bancaria Regional",
+        "category": "Mobile App",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1600",
+        "description": "Modernización de la interfaz y flujos de transacciones para una app bancaria con más de 1M de usuarios.",
+        "tags": [
+            "React Native",
+            "Redux",
+            "Node.js"
+        ],
+        "isExperience": true,
+        "company": "Global FinTech Hub",
+        "role": "Senior Fullstack Developer"
+    }
+]
